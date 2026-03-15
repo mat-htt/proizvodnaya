@@ -84,8 +84,9 @@ class StudentResponse(models.Model):
 class Lecture(models.Model):
     title = models.CharField("Название лекции", max_length=255)
     slug = models.SlugField("URL-имя (например, topic-1)", unique=True)
-    image_url = models.CharField("Путь к картинке", max_length=500, default="/images/default.jpg")
-
+    image_url = models.CharField("Путь к превью-картинке", max_length=500, default="/images/default.jpg")
+    content = models.TextField("Содержание лекции", blank=True, help_text="Здесь будет текст лекции, формулы и теги картинок")
+    video_url = models.URLField("Ссылка на видео (YouTube)", max_length=500, blank=True, null=True)
 
     related_test = models.ForeignKey(
         'Test',

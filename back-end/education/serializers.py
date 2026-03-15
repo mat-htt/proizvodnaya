@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Test, Question, Choice, Lecture
+from .models import Test, Question, Choice, Lecture, TestSubmission
 
 class ChoiceSerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,7 +31,18 @@ class TestSubmitSerializer(serializers.Serializer):
     answers = AnswerItemSerializer(many=True)
 
 
+
 class LectureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lecture
-        fields = ['id', 'title', 'slug', 'image_url', 'related_test']
+        fields = ['id', 'title', 'slug', 'image_url', 'content', 'video_url', 'related_test']
+
+
+class TestSubmissionSerializer(serializers.ModelSerializer):
+    student_name = serializers.CharField(source='student.__str__', read_only=True)
+    group_name = serializers.CharField(source='student.group.name', read_only=True)
+    test_title = serializers.CharField(source='test.title', read_only=True)
+
+    class Meta:
+        model = TestSubmission
+        fields = ['id', 'student_name', 'group_name', 'test_title', 'score', 'submitted_at']

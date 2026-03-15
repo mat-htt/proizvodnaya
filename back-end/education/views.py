@@ -2,7 +2,22 @@ from rest_framework import viewsets, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Test, Question, Choice, TestSubmission, StudentResponse, StudentProfile, Lecture
-from .serializers import TestSerializer, TestSubmitSerializer, LectureSerializer
+from .serializers import TestSerializer, TestSubmitSerializer, LectureSerializer, TestSubmissionSerializer
+from rest_framework import status, generics
+from rest_framework.views import APIView
+
+class TeacherResultsView(generics.ListAPIView):
+    # Этот вид будет отдавать результаты, которые учитель увидит в таблице
+    queryset = TestSubmission.objects.all().order_by('-submitted_at')
+    serializer_class = TestSubmissionSerializer
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        group_id = self.request.query_params.get('group_id')
+        if group_id:
+            # Фильтруем результаты только для конкретной группы
+            queryset = queryset.filter(student__group_id=group_id)
+        return queryset
 
 class TestViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Test.objects.all()
@@ -16,65 +31,58 @@ class LectureViewSet(viewsets.ReadOnlyModelViewSet):
 class SubmitTestView(APIView):
     def post(self, request):
         serializer = TestSubmitSerializer(data=request.data)
-        if not serializer.is_valid():
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        if serializer.is_valid():
+            data = serializer.validated_data
+            test_obj = Test.objects.get(id=data['test_id'])
 
-        data = serializer.validated_data
-        test = Test.objects.get(id=data['test_id'])
+            # Пока у нас нет полноценной авторизации, берем первого студента из базы
+            # (Позже мы заменим это на request.user.student_profile)
+            student = StudentProfile.objects.first()
 
-        # В реальном проекте берем из request.user.student_profile
-        # Для теста возьмем первого попавшегося студента или создай его в админке
-        student = StudentProfile.objects.first()
+            submission = TestSubmission.objects.create(
+                student=student,
+                test=test_obj,
+                score=0
+            )
 
-        correct_count = 0
-        total_questions = test.questions.count()
+            correct_answers_count = 0
+            total_questions = test_obj.questions.count()
 
-        # Создаем запись о попытке
-        submission = TestSubmission.objects.create(
-            student=student,
-            test=test,
-            score=0  # Обновим в конце
-        )
+            for answer in data['answers']:
+                question = Question.objects.get(id=answer['question_id'])
+                is_correct = False
 
-        for answer_data in data['answers']:
-            question = Question.objects.get(id=answer_data['question_id'])
-            is_correct = False
+                if question.q_type == 'CHOICE':
+                    selected_choice = Choice.objects.get(id=answer['selected_choice_id'])
+                    if selected_choice.is_correct:
+                        is_correct = True
+                        correct_answers_count += 1
 
-            if question.q_type == 'CHOICE':
-                choice = Choice.objects.get(id=answer_data['selected_choice_id'])
-                if choice.is_correct:
-                    is_correct = True
-                    correct_count += 1
+                elif question.q_type == 'TEXT':
+                    # Сравниваем текст (убираем пробелы и приводим к нижнему регистру)
+                    if answer['text_answer'].strip().lower() == question.correct_text_answer.strip().lower():
+                        is_correct = True
+                        correct_answers_count += 1
 
+                # Сохраняем каждый ответ ученика в базу
                 StudentResponse.objects.create(
                     submission=submission,
                     question=question,
-                    selected_choice=choice,
+                    selected_choice=selected_choice if question.q_type == 'CHOICE' else None,
+                    text_answer=answer.get('text_answer'),
                     is_correct=is_correct
                 )
 
-            elif question.q_type == 'TEXT':
-                user_text = answer_data['text_answer'].strip().lower()
-                correct_text = question.correct_text_answer.strip().lower()
-                if user_text == correct_text:
-                    is_correct = True
-                    correct_count += 1
+            # Вычисляем процент правильных ответов
+            final_score = int((correct_answers_count / total_questions) * 100) if total_questions > 0 else 0
+            submission.score = final_score
+            submission.save()
 
-                StudentResponse.objects.create(
-                    submission=submission,
-                    question=question,
-                    text_answer=answer_data['text_answer'],
-                    is_correct=is_correct
-                )
+            return Response({
+                "message": "Тест завершен!",
+                "score": final_score,
+                "correct_count": correct_answers_count,
+                "total": total_questions
+            }, status=status.HTTP_201_CREATED)
 
-        # Считаем итоговый процент (оценку)
-        score_percentage = int((correct_count / total_questions) * 100) if total_questions > 0 else 0
-        submission.score = score_percentage
-        submission.save()
-
-        return Response({
-            "status": "success",
-            "score": score_percentage,
-            "correct_answers": correct_count,
-            "total_questions": total_questions
-        })
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
