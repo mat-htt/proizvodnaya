@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
-// Общие компоненты
 import Header from './components/Header';
 import Footer from './components/Footer';
-
-// Страницы
 import Hub from './pages/Hub';
 import QuizPage from './pages/QuizPage';
-import TopicPage from './pages/TopicPage'; // Наш новый универсальный компонент
+import TopicPage from './pages/TopicPage';
+import TeacherDashboard from './pages/TeacherDashboard';
+import Login from './pages/Login';
+import Register from './pages/Register';
+
+const PrivateRoute = ({ children }) => {
+  return localStorage.getItem('access_token') ? children : <Navigate to="/login" />;
+};
 
 function App() {
   const [lectures, setLectures] = useState([]);
 
-  // Загружаем список лекций один раз при старте приложения для главной страницы (Hub)
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/api/lectures/')
       .then(res => setLectures(res.data))
@@ -25,23 +28,18 @@ function App() {
     <Router>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
-
         <main style={{ flex: 1 }}>
           <Routes>
-            {/* Главная страница со всеми темами */}
             <Route path="/" element={<Hub lectures={lectures} />} />
-
-            {/* Универсальный роут для тем.
-              Параметр :slug позволяет открывать любую лекцию
-              (например, /topic/opredelenie-proizvodnoy) используя один компонент.
-            */}
             <Route path="/topic/:slug" element={<TopicPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
-            {/* Страница теста по его ID */}
-            <Route path="/quiz/:id" element={<QuizPage />} />
+            {/* Защищенные маршруты */}
+            <Route path="/quiz/:id" element={<PrivateRoute><QuizPage /></PrivateRoute>} />
+            <Route path="/teacher" element={<PrivateRoute><TeacherDashboard /></PrivateRoute>} />
           </Routes>
         </main>
-
         <Footer />
       </div>
     </Router>

@@ -2,9 +2,16 @@ from rest_framework import viewsets, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Test, Question, Choice, TestSubmission, StudentResponse, StudentProfile, Lecture
-from .serializers import TestSerializer, TestSubmitSerializer, LectureSerializer, TestSubmissionSerializer
-from rest_framework import status, generics
+from .serializers import TestSerializer, TestSubmitSerializer, LectureSerializer, TestSubmissionSerializer, RegisterSerializer
+from rest_framework import status, generics, permissions
 from rest_framework.views import APIView
+from django.contrib.auth.models import User
+
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    permission_classes = (permissions.AllowAny,)
+    serializer_class = RegisterSerializer
+
 
 class TeacherResultsView(generics.ListAPIView):
     # Этот вид будет отдавать результаты, которые учитель увидит в таблице
@@ -26,6 +33,8 @@ class TestViewSet(viewsets.ReadOnlyModelViewSet):
 class LectureViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Lecture.objects.all()
     serializer_class = LectureSerializer
+    lookup_field = 'slug'           # ← это ключевое
+    lookup_url_kwarg = 'slug'       # можно и без, но лучше явно
 
 
 class SubmitTestView(APIView):
@@ -37,7 +46,7 @@ class SubmitTestView(APIView):
 
             # Пока у нас нет полноценной авторизации, берем первого студента из базы
             # (Позже мы заменим это на request.user.student_profile)
-            student = StudentProfile.objects.first()
+            student = request.user.student_profile
 
             submission = TestSubmission.objects.create(
                 student=student,
@@ -51,6 +60,7 @@ class SubmitTestView(APIView):
             for answer in data['answers']:
                 question = Question.objects.get(id=answer['question_id'])
                 is_correct = False
+                selected_choice = None
 
                 if question.q_type == 'CHOICE':
                     selected_choice = Choice.objects.get(id=answer['selected_choice_id'])

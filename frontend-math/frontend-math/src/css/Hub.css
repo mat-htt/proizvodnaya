@@ -1,0 +1,3 @@
+.hub-container { padding: 40px; max-width: 1200px; margin: 0 auto; }
+.hub-title { color: #2e7d32; margin-bottom: 30px; text-align: center; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }

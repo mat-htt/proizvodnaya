@@ -1,0 +1,4 @@
+.results-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.results-table th, .results-table td { padding: 12px; border: 1px solid #ddd; }
+.pass { color: green; font-weight: bold; }
+.fail { color: red; font-weight: bold; }

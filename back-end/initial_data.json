@@ -1,0 +1,58 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "teacher",
+      "password": "pbkdf2_sha256$720000$example$hash_here",
+      "is_staff": true,
+      "is_superuser": true
+    }
+  },
+  {
+    "model": "education.lecture",
+    "pk": 1,
+    "fields": {
+      "title": "Определение производной",
+      "slug": "proizvodnaya-def",
+      "content": "<p>Производная — это скорость изменения функции...</p>",
+      "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "image_url": "/images/default.jpg"
+    }
+  },
+  {
+    "model": "education.test",
+    "pk": 1,
+    "fields": {
+      "title": "Базовые вопросы по производной",
+      "description": "Тест для проверки знаний"
+    }
+  },
+  {
+    "model": "education.question",
+    "pk": 1,
+    "fields": {
+      "test": 1,
+      "text": "Чему равна производная константы?",
+      "q_type": "CHOICE"
+    }
+  },
+  {
+    "model": "education.choice",
+    "pk": 1,
+    "fields": {
+      "question": 1,
+      "text": "0",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "education.choice",
+    "pk": 2,
+    "fields": {
+      "question": 1,
+      "text": "1",
+      "is_correct": false
+    }
+  }
+]

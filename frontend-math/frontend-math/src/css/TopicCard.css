@@ -1,0 +1,5 @@
+.topic-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-decoration: none; color: #333; transition: transform 0.2s; display: flex; flex-direction: column; }
+.topic-card:hover { transform: translateY(-5px); }
+.topic-card-img { width: 100%; height: 150px; object-fit: cover; background: #e8f5e9; }
+.topic-card-body { padding: 15px; text-align: center; }
+.topic-card-title { margin: 0; color: #2e7d32; }
