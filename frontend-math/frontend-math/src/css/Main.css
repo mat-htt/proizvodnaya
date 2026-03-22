@@ -1,2 +1,38 @@
 .page-container { padding: 20px; max-width: 800px; margin: 0 auto; }
 .loading { padding: 50px; text-align: center; }
+
+/* Контейнер для центрирования */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Занимает половину видимого экрана */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Анимированный спиннер */
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #f3f3f3;
+    border-bottom-color: #10b981; /* Твой основной зеленый цвет */
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+/* Текст под спиннером */
+.loading-text {
+    color: #1a3c34;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,3 +1,125 @@
-.hub-container { padding: 40px; max-width: 1200px; margin: 0 auto; }
-.hub-title { color: #2e7d32; margin-bottom: 30px; text-align: center; }
-.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+:root {
+  --deep-green: #1b4332;
+  --main-green: #2d6a4f;
+  --soft-green: #40916c;
+  --mint: #d8f3dc;
+  --white: #ffffff;
+}
+
+.hub-page {
+  position: relative;
+  min-height: 100vh;
+  background-color: #f0f7f4; /* Светлый фон для контраста */
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+/* Приколюхи на фоне: абстрактные пятна */
+.bg-decor {
+  position: absolute;
+  filter: blur(80px);
+  z-index: 0;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.blob-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--soft-green);
+  top: -100px;
+  right: -100px;
+}
+
+.blob-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--mint);
+  bottom: -50px;
+  left: -50px;
+}
+
+/* Математическая сетка на фоне */
+.math-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(var(--main-green) 0.5px, transparent 0.5px);
+  background-size: 30px 30px; /* Эффект тетрадного листа в точку */
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.hub-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hub-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hub-title {
+  font-size: 2.5rem;
+  color: var(--deep-green);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hub-subtitle {
+  color: var(--soft-green);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding-bottom: 60px;
+}
+
+/* Стили для TopicCard (нужно применить в компоненте TopicCard.css) */
+.topic-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.topic-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(45, 106, 79, 0.2);
+  border-color: var(--main-green);
+}
+
+
+.function-waves {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    repeat-x url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C150,110 350,10 500,60 C650,110 850,10 1000,60 L1000,120 L0,120 Z' fill='%232d6a4f' fill-opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 100% 120px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -50px); }
+  100% { transform: translate(0, 0); }
+}
+
+.blob-1, .blob-2 {
+  animation: float 15s infinite ease-in-out; /* Плавное движение «изменения» */
+}

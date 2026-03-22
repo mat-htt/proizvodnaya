@@ -1,6 +1,118 @@
-.header { background: #2e7d32; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
-.header-logo { color: white; text-decoration: none; font-weight: bold; font-size: 20px; }
-.header-nav { display: flex; align-items: center; }
-.header-link { color: white; text-decoration: none; margin-left: 20px; }
-.logout-btn { margin-left: 20px; background: transparent; border: 1px solid white; color: white; cursor: pointer; padding: 5px 10px; border-radius: 4px; }
-.register-btn { margin-left: 20px; background: white; color: #2e7d32; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; }
+/* Переменные для удобства */
+:root {
+  --primary-green: #2d6a4f;
+  --light-green: #40916c;
+  --accent-mint: #d8f3dc;
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 5%;
+  background: rgba(45, 106, 79, 0.95); /* Полупрозрачный зеленый */
+  backdrop-filter: blur(10px); /* Эффект матового стекла */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.header-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-logo::before {
+  content: '∑'; /* Математический акцент */
+  background: var(--accent-mint);
+  color: var(--primary-green);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-link {
+  color: var(--accent-mint);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Линия при наведении */
+.header-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--white);
+  transition: width 0.3s ease;
+}
+
+.header-link:hover {
+  color: var(--white);
+}
+
+.header-link:hover::after {
+  width: 100%;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.register-btn {
+  background: var(--white);
+  color: var(--primary-green) !important;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid var(--accent-mint);
+  color: var(--accent-mint);
+  padding: 6px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #c9184a; /* Красный акцент при выходе */
+  border-color: #c9184a;
+  color: white;
+}

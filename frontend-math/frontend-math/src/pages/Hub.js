@@ -13,19 +13,31 @@ const Hub = () => {
   }, []);
 
   return (
-    <div className="hub-container">
-      <h2 className="hub-title">Курс по производным</h2>
-      <div className="hub-grid">
-        {lectures.map(l => (
-          <TopicCard
-            key={l.id}
-            slug={l.slug}
-            title={l.title}
-            image={l.image_url}
-          />
-        ))}
+    <div className="hub-page">
+      {/* Декоративные приколюхи на фоне */}
+      <div className="bg-decor blob-1"></div>
+      <div className="bg-decor blob-2"></div>
+      <div className="math-overlay"></div>
+
+      <div className="hub-container">
+        <header className="hub-header">
+          <h2 className="hub-title">Курс по производным</h2>
+          <p className="hub-subtitle">Освойте производные шаг за шагом с интерактивными лекциями</p>
+        </header>
+
+        <div className="hub-grid">
+          {lectures.map(l => (
+            <TopicCard
+              key={l.id}
+              slug={l.slug}
+              title={l.title}
+              image={l.image_url}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
+
 export default Hub;

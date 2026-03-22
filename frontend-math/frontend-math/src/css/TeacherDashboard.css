@@ -1,4 +1,130 @@
-.results-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-.results-table th, .results-table td { padding: 12px; border: 1px solid #ddd; }
-.pass { color: green; font-weight: bold; }
-.fail { color: red; font-weight: bold; }
+/* Контейнер всей страницы */
+.page-container {
+    padding: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+h2 {
+    color: #1a3c34;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Блок с фильтрами */
+.dashboard-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.filter-input, .filter-select {
+    padding: 10px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.filter-input:focus, .filter-select:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.filter-input {
+    flex: 2;
+}
+
+.filter-select {
+    flex: 1;
+    cursor: pointer;
+}
+
+/* Таблица результатов */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.results-table th {
+    background: #1a3c34;
+    color: white;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.results-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+}
+
+.results-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.pass {
+    color: #059669;
+    font-weight: bold;
+    background: #ecfdf5;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.fail {
+    color: #dc2626;
+    font-weight: bold;
+    background: #fef2f2;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* --- СТИЛИ ЗАГРУЗКИ --- */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-bottom-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+.loading-text {
+    color: #1a3c34;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+    .dashboard-filters {
+        flex-direction: column;
+    }
+}

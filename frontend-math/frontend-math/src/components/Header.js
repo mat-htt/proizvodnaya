@@ -13,20 +13,27 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Link to="/" className="header-logo">MathBase</Link>
+      <Link to="/" className="header-logo">
+        MathBase
+      </Link>
+
       <nav className="header-nav">
         <Link to="/" className="header-link">Темы</Link>
-        {isLoggedIn ? (
-          <>
-            <Link to="/teacher" className="header-link">Панель учителя</Link>
-            <button onClick={handleLogout} className="logout-btn">Выйти</button>
-          </>
-        ) : (
-          <>
-            <Link to="/login" className="header-link">Войти</Link>
-            <Link to="/register" className="register-btn">Регистрация</Link>
-          </>
-        )}
+        <Link to="/about" className="header-link">О проекте</Link>
+
+        <div className="auth-buttons">
+          {isLoggedIn ? (
+            <>
+              <Link to="/teacher" className="header-link">Панель учителя</Link>
+              <button onClick={handleLogout} className="logout-btn">Выйти</button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="header-link">Войти</Link>
+              <Link to="/register" className="register-btn">Регистрация</Link>
+            </>
+          )}
+        </div>
       </nav>
     </header>
   );
