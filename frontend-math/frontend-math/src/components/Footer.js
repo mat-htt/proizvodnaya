@@ -22,7 +22,7 @@ const Footer = () => (
         <div className="footer-links">
           <Link to="/" className="footer-link">Все темы</Link>
           <Link to="/teacher" className="footer-link">Для учителей</Link>
-          <a href="#resources" className="footer-link">Материалы</a>
+          <Link to="/resources" className="footer-link">Материалы</Link>
         </div>
       </div>
 
@@ -30,9 +30,9 @@ const Footer = () => (
       <div className="footer-section">
         <h4 className="footer-section-title">Поддержка</h4>
         <div className="footer-links">
-          <a href="#contact" className="footer-link">Связаться с нами</a>
-          <a href="#privacy" className="footer-link">Конфиденциальность</a>
-          <a href="#terms" className="footer-link">Условия использования</a>
+          <Link to="/contact" className="footer-link">Связаться с нами</Link>
+          <Link to="/privacy" className="footer-link">Конфиденциальность</Link>
+          <Link to="/terms" className="footer-link">Условия использования</Link>
         </div>
       </div>
     </div>

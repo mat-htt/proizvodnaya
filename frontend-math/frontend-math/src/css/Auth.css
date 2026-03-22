@@ -1,3 +1,88 @@
-.auth-container { max-width: 400px; margin: 50px auto; text-align: center; padding: 20px; }
-.auth-form input { display: block; width: 100%; margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-.auth-form button { padding: 10px 20px; background: #2e7d32; color: white; border: none; border-radius: 4px; cursor: pointer; }
+/* Общая обертка для центрирования по вертикали и горизонтали */
+.auth-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* Учитываем высоту хедера/футера, если они есть */
+    padding: 20px;
+    background-color: #f9f9f9; /* Легкий фон */
+}
+
+/* Контейнер самой формы */
+.auth-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 400px; /* Ограничиваем ширину */
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 30px;
+    color: #2d3436;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Базовые стили для всех полей ввода и select */
+.auth-form input,
+.auth-form select,
+.auth-select {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Округлые углы */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+    box-sizing: border-box; /* Важно: padding внутри ширины */
+    color: #2d3436;
+}
+
+/* Стили при фокусе (мятный цвет) */
+.auth-form input:focus,
+.auth-form select:focus,
+.auth-select:focus {
+    outline: none;
+    border-color: #40916c; /* Твой основной цвет */
+    box-shadow: 0 0 8px rgba(64, 145, 108, 0.2);
+}
+
+/* Улучшенный вид выпадающего списка (select) */
+.auth-form select,
+.auth-select {
+    cursor: pointer;
+    appearance: none; /* Убираем стандартную серую стрелку браузера */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Добавляем кастомную мятную стрелочку (SVG) */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2340916c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 15px;
+    padding-right: 40px; /* Отступ справа, чтобы текст не наезжал на стрелку */
+}
+
+/* Кнопка */
+.auth-form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #40916c; /* Мятный */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.auth-form button:hover {
+    background: #2d6a4f; /* Более темный мятный при наведении */
+}

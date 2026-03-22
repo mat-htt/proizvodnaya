@@ -1,11 +1,11 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, generics, permissions, serializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Test, Question, Choice, TestSubmission, StudentResponse, StudentProfile, Lecture
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from .models import Test, Question, Choice, TestSubmission, StudentResponse, StudentProfile, Lecture, Group
 from .serializers import TestSerializer, TestSubmitSerializer, LectureSerializer, TestSubmissionSerializer, RegisterSerializer
-from rest_framework import status, generics, permissions
-from rest_framework.views import APIView
 from django.contrib.auth.models import User
+
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
@@ -13,86 +13,134 @@ class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
 
 
+class SubmitTestView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        serializer = TestSubmitSerializer(data=request.data)
+        if serializer.is_valid():
+            data = serializer.validated_data
+            test_id = data['test_id']
+            test = Test.objects.get(id=test_id)
+
+            student = request.user.student_profile
+
+            submission = TestSubmission.objects.create(
+                student=student,
+                test=test,
+                score=0
+            )
+
+            correct_count = 0
+            total_questions = len(test.questions.all())
+
+            for answer in data['answers']:
+                question = Question.objects.get(id=answer['question_id'])
+                selected_choice = None
+                is_correct = False
+
+                if question.q_type == 'CHOICE':
+                    selected_choice_id = answer.get('selected_choice_id')
+                    if selected_choice_id:
+                        selected_choice = Choice.objects.get(id=selected_choice_id)
+                        is_correct = selected_choice.is_correct
+                        if is_correct:
+                            correct_count += 1
+
+                elif question.q_type == 'TEXT':
+                    text_answer = answer.get('text_answer', '').strip().lower()
+                    correct_text = question.correct_text_answer.strip().lower() if question.correct_text_answer else ''
+                    if text_answer == correct_text:
+                        is_correct = True
+                        correct_count += 1
+
+                StudentResponse.objects.create(
+                    submission=submission,
+                    question=question,
+                    selected_choice=selected_choice,
+                    text_answer=answer.get('text_answer'),
+                    is_correct=is_correct
+                )
+
+            final_score = int((correct_count / total_questions) * 100) if total_questions > 0 else 0
+            submission.score = final_score
+            submission.save()
+
+            return Response({
+                "message": "Тест завершён!",
+                "score": final_score,
+                "correct_count": correct_count,
+                "total": total_questions
+            }, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 class TeacherResultsView(generics.ListAPIView):
-    # Этот вид будет отдавать результаты, которые учитель увидит в таблице
     queryset = TestSubmission.objects.all().order_by('-submitted_at')
     serializer_class = TestSubmissionSerializer
+    permission_classes = [IsAdminUser]  # Только учителя (is_staff=True)
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        group_id = self.request.query_params.get('group_id')
-        if group_id:
-            # Фильтруем результаты только для конкретной группы
-            queryset = queryset.filter(student__group_id=group_id)
-        return queryset
+
+class LectureViewSet(viewsets.ModelViewSet):
+    queryset = Lecture.objects.all()
+    serializer_class = LectureSerializer
+    lookup_field = 'slug'
+
 
 class TestViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Test.objects.all()
     serializer_class = TestSerializer
 
-class LectureViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Lecture.objects.all()
-    serializer_class = LectureSerializer
-    lookup_field = 'slug'           # ← это ключевое
-    lookup_url_kwarg = 'slug'       # можно и без, но лучше явно
+
+class MeView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response({
+            'is_teacher': request.user.is_staff
+        })
 
 
-class SubmitTestView(APIView):
-    def post(self, request):
-        serializer = TestSubmitSerializer(data=request.data)
-        if serializer.is_valid():
-            data = serializer.validated_data
-            test_obj = Test.objects.get(id=data['test_id'])
+class GroupListView(generics.ListAPIView):
+    queryset = Group.objects.all()
+    # Убираем строку serializer_class = serializers.SerializerMethodField()
 
-            # Пока у нас нет полноценной авторизации, берем первого студента из базы
-            # (Позже мы заменим это на request.user.student_profile)
-            student = request.user.student_profile
+    def get_serializer_class(self):
+        # Оставляем определение внутри или выносим в serializers.py
+        class GroupSerializer(serializers.ModelSerializer):
+            class Meta:
+                model = Group
+                fields = ['id', 'name']
+        return GroupSerializer
 
-            submission = TestSubmission.objects.create(
-                student=student,
-                test=test_obj,
-                score=0
-            )
 
-            correct_answers_count = 0
-            total_questions = test_obj.questions.count()
+class SubmissionDetailView(APIView):
+    permission_classes = [IsAdminUser]
 
-            for answer in data['answers']:
-                question = Question.objects.get(id=answer['question_id'])
-                is_correct = False
-                selected_choice = None
+    def get(self, request, pk):
+        submission = TestSubmission.objects.get(id=pk)
+        responses = StudentResponse.objects.filter(submission=submission).select_related('question')
 
-                if question.q_type == 'CHOICE':
-                    selected_choice = Choice.objects.get(id=answer['selected_choice_id'])
-                    if selected_choice.is_correct:
-                        is_correct = True
-                        correct_answers_count += 1
+        data = {
+            'student_name': submission.student.user.get_full_name() or "—",
+            'group_name': submission.student.group.name if submission.student.group else "—",
+            'score': submission.score,
+            'responses': [
+                {
+                    'question_text': r.question.text,
+                    'user_answer': r.selected_choice.text if r.selected_choice else r.text_answer,
+                    'correct_answer': r.question.correct_text_answer or (r.question.choices.filter(is_correct=True).first().text if r.question.q_type == 'CHOICE' else ""),
+                    'is_correct': r.is_correct,
+                } for r in responses
+            ]
+        }
+        return Response(data)
 
-                elif question.q_type == 'TEXT':
-                    # Сравниваем текст (убираем пробелы и приводим к нижнему регистру)
-                    if answer['text_answer'].strip().lower() == question.correct_text_answer.strip().lower():
-                        is_correct = True
-                        correct_answers_count += 1
-
-                # Сохраняем каждый ответ ученика в базу
-                StudentResponse.objects.create(
-                    submission=submission,
-                    question=question,
-                    selected_choice=selected_choice if question.q_type == 'CHOICE' else None,
-                    text_answer=answer.get('text_answer'),
-                    is_correct=is_correct
-                )
-
-            # Вычисляем процент правильных ответов
-            final_score = int((correct_answers_count / total_questions) * 100) if total_questions > 0 else 0
-            submission.score = final_score
-            submission.save()
-
-            return Response({
-                "message": "Тест завершен!",
-                "score": final_score,
-                "correct_count": correct_answers_count,
-                "total": total_questions
-            }, status=status.HTTP_201_CREATED)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def delete(self, request, pk):
+        try:
+            submission = TestSubmission.objects.get(pk=pk)
+            submission.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except TestSubmission.DoesNotExist:
+            return Response({"error": "Результат не найден"}, status=status.HTTP_404_NOT_FOUND)

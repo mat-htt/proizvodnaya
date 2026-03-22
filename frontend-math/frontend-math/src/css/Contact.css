@@ -1,0 +1,199 @@
+/* Общие настройки страницы */
+.contact-page {
+    background-color: #1a1d21; /* Очень темный серый, почти черный */
+    min-height: 100vh;
+    padding: 80px 20px;
+    color: #ecf0f1;
+    font-family: 'Courier New', Courier, monospace; /* Моноширинный шрифт для стиля IT */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Фоновая анимация (легкое свечение) */
+.contact-bg-animation {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 70% 20%, rgba(64, 145, 108, 0.15) 0%, rgba(26, 29, 33, 0) 50%),
+                radial-gradient(circle at 10% 80%, rgba(183, 228, 199, 0.1) 0%, rgba(26, 29, 33, 0) 50%);
+    z-index: 0;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(45, 52, 54, 0.5); /* Полупрозрачный фон */
+    border-radius: 12px;
+    border: 1px solid #40916c; /* Неоновая рамка */
+    box-shadow: 0 0 30px rgba(183, 228, 199, 0.2);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Шапка "Терминала" */
+.terminal-header {
+    background-color: #2d3436;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #40916c;
+}
+
+.terminal-buttons { display: flex; gap: 8px; }
+.terminal-buttons span { width: 12px; height: 12px; border-radius: 50%; }
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
+
+.terminal-title {
+    margin-left: 20px;
+    color: #b2bec3;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Контент */
+.contact-content {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.contact-text h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.contact-text p {
+    color: #b2bec3;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.contact-text p.sub-text {
+    color: #636e72;
+    font-size: 1rem;
+}
+
+/* Мигающий курсор */
+.cursor {
+    display: inline-block;
+    color: #b7e4c7;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Глитч-эффект для заголовка */
+.glitch-text {
+    position: relative;
+}
+.glitch-text::before, .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9;
+    clip: rect(85px, 450px, 140px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(10px, 9999px, 9px, 0); }
+    10% { clip: rect(60px, 9999px, 70px, 0); }
+    100% { clip: rect(30px, 9999px, 80px, 0); }
+}
+@keyframes glitch-anim2 {
+    0% { clip: rect(100px, 9999px, 120px, 0); }
+    100% { clip: rect(10px, 9999px, 40px, 0); }
+}
+
+/* Карточки контактов */
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-card {
+    background: rgba(26, 29, 33, 0.8);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Эффект наведения 3D */
+.contact-card:hover {
+    transform: translateX(10px) scale(1.02);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.tg-card:hover { border-color: #0088cc; box-shadow: 0 0 20px rgba(0, 136, 204, 0.3); }
+.gh-card:hover { border-color: #ecf0f1; box-shadow: 0 0 20px rgba(236, 240, 241, 0.2); }
+
+.card-icon svg {
+    width: 60px;
+    height: 60px;
+    color: #b7e4c7;
+    transition: color 0.3s;
+}
+
+.contact-card:hover .card-icon svg {
+    color: white;
+}
+
+.card-info h3 { font-size: 1.5rem; margin-bottom: 8px; }
+.card-info p { color: #b2bec3; margin-bottom: 12px; font-size: 1.1rem;}
+
+.card-action {
+    font-size: 0.9rem;
+    color: #40916c;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Футер терминала */
+.contact-footer {
+    padding: 15px 60px;
+    background-color: rgba(45, 52, 54, 0.8);
+    border-top: 1px solid #40916c;
+    font-size: 0.8rem;
+    color: #636e72;
+}
+.status-online { color: #27c93f; }
+#ping { color: #b7e4c7; }
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        padding: 30px;
+        gap: 40px;
+    }
+    .contact-text h1 { font-size: 2.2rem; }
+}

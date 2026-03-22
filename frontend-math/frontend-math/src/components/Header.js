@@ -2,38 +2,34 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/Header.css';
 
-const Header = () => {
+const Header = ({ user, onLogout }) => {
   const navigate = useNavigate();
-  const isLoggedIn = !!localStorage.getItem('access_token');
 
   const handleLogout = () => {
-    localStorage.removeItem('access_token');
+    localStorage.clear();
+    onLogout(); // Вызываем функцию из App.js, чтобы обнулить состояние
     navigate('/login');
   };
 
   return (
     <header className="header">
-      <Link to="/" className="header-logo">
-        MathBase
-      </Link>
-
+      <Link to="/" className="header-logo">MathBase</Link>
       <nav className="header-nav">
         <Link to="/" className="header-link">Темы</Link>
-        <Link to="/about" className="header-link">О проекте</Link>
 
-        <div className="auth-buttons">
-          {isLoggedIn ? (
-            <>
+        {user.isLoggedIn ? (
+          <>
+            {user.isTeacher && (
               <Link to="/teacher" className="header-link">Панель учителя</Link>
-              <button onClick={handleLogout} className="logout-btn">Выйти</button>
-            </>
-          ) : (
-            <>
-              <Link to="/login" className="header-link">Войти</Link>
-              <Link to="/register" className="register-btn">Регистрация</Link>
-            </>
-          )}
-        </div>
+            )}
+            <button onClick={handleLogout} className="logout-btn">Выйти</button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="header-link">Вход</Link>
+            <Link to="/register" className="header-link register-btn">Регистрация</Link>
+          </>
+        )}
       </nav>
     </header>
   );
