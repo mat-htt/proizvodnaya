@@ -1,130 +1,228 @@
 /* Контейнер всей страницы */
 .page-container {
-    padding: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-    font-family: 'Inter', sans-serif;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
 }
 
-h2 {
-    color: #1a3c34;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    text-align: center;
+.dashboard-title {
+  color: #1a3c34;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
 }
 
-/* Блок с фильтрами */
+/* Фильтры */
 .dashboard-filters {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
-    background: #f8fafc;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.filter-input, .filter-select {
-    padding: 10px 15px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.2s;
-}
-
-.filter-input:focus, .filter-select:focus {
-    border-color: #10b981;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-}
-
-.filter-input {
-    flex: 2;
-}
-
+.filter-input,
 .filter-select {
-    flex: 1;
-    cursor: pointer;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  min-width: 220px;
+  background: white;
 }
 
-/* Таблица результатов */
+.filter-input:focus,
+.filter-select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* Таблица */
 .results-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.results-table th,
+.results-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .results-table th {
-    background: #1a3c34;
-    color: white;
-    text-align: left;
-    padding: 15px;
-    font-weight: 600;
+  background: #1a3c34;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
-.results-table td {
-    padding: 15px;
-    border-bottom: 1px solid #f1f5f9;
-    color: #475569;
+.results-table tr {
+  transition: background 0.2s;
 }
 
-.results-table tr:hover {
-    background-color: #f8fafc;
+.clickable-row:hover {
+  background: #f1f5f9;
+  cursor: pointer;
 }
 
-.pass {
-    color: #059669;
-    font-weight: bold;
-    background: #ecfdf5;
-    padding: 5px 12px;
-    border-radius: 20px;
+.score-pass { color: #10b981; font-weight: 600; }
+.score-fail  { color: #ef4444; font-weight: 600; }
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
 }
 
-.fail {
-    color: #dc2626;
-    font-weight: bold;
-    background: #fef2f2;
-    padding: 5px 12px;
-    border-radius: 20px;
+.delete-btn:hover {
+  background: #dc2626;
 }
 
-/* --- СТИЛИ ЗАГРУЗКИ --- */
-.loading-container {
-    display: flex;
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 900px;
+  width: 92%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2.8rem;
+  cursor: pointer;
+  color: #6b7280;
+  transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+  color: #1f2937;
+}
+
+.modal-title {
+  color: #1a3c34;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.modal-info {
+  background: #f0fdfa;
+  padding: 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.modal-info p {
+  margin: 0.6rem 0;
+  font-size: 1.05rem;
+}
+
+.responses-list {
+  margin-top: 1.5rem;
+}
+
+.response-item {
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  border-radius: 10px;
+  border-left: 6px solid;
+  background: #f9fafb;
+}
+
+.response-item.correct {
+  border-left-color: #10b981;
+  background: #ecfdf5;
+}
+
+.response-item.incorrect {
+  border-left-color: #ef4444;
+  background: #fef2f2;
+}
+
+.question-text {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
+.answer-block p {
+  margin: 0.5rem 0;
+}
+
+.status {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+  font-size: 1.2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .dashboard-filters {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
+  }
+
+  .results-table {
+    font-size: 0.95rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
 }
 
-.loader {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-bottom-color: #10b981;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    margin-bottom: 15px;
+/* Добавь в TeacherDashboard.css */
+.dashboard-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+    min-width: 150px;
 }
 
-.loading-text {
-    color: #1a3c34;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-@keyframes rotation {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@media (max-width: 600px) {
-    .dashboard-filters {
-        flex-direction: column;
-    }
+.dashboard-select:focus {
+    border-color: #40916c;
 }
