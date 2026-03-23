@@ -83,3 +83,17 @@ class TestSubmissionSerializer(serializers.ModelSerializer):
     class Meta:
         model = TestSubmission
         fields = ['id', 'student_name', 'group_name', 'test_title', 'score', 'submitted_at']
+
+
+class ChoiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Choice
+        fields = ['id', 'question', 'text', 'is_correct']
+
+
+class QuestionSerializer(serializers.ModelSerializer):
+    choices = ChoiceSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Question
+        fields = ['id', 'test', 'text', 'q_type', 'choices']

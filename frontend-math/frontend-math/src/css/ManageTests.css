@@ -1,0 +1,172 @@
+/* src/css/ManageTests.css */
+
+/* --- СТИЛИ ЛОАДЕРА (СПИННЕРА) ПО ЦЕНТРУ --- */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Центровка по вертикали в пределах видимости */
+    color: #1a3c34;
+    font-weight: 500;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #10b981; /* Зеленый цвет темы */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- СТИЛИ СТРАНИЦЫ УПРАВЛЕНИЯ --- */
+.manage-tests-page {
+    background: #f3f4f6;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.manage-tests-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    color: #1a3c34;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.create-new-test-btn {
+    background: #10b981;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.create-new-test-btn:hover {
+    background: #059669;
+}
+
+/* --- КАРТОЧКИ ТЕСТОВ --- */
+.tests-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.test-manage-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid transparent;
+}
+
+.test-manage-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border-left: 5px solid #10b981;
+}
+
+.test-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.test-id-tag {
+    background: #e5e7eb;
+    color: #4b5563;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.test-info h3 {
+    margin: 10px 0 5px 0;
+    color: #1f2937;
+    font-size: 1.25rem;
+}
+
+.test-info p {
+    margin: 0 0 10px 0;
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.test-date {
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+/* --- БЛОК КНОПОК --- */
+.test-actions-group {
+    display: flex;
+    flex-direction: column; /* Кнопки друг под другом для компактности */
+    gap: 10px;
+    min-width: 160px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    transition: background 0.2s;
+}
+
+.edit-btn {
+    background: #3b82f6; /* Синий для редактирования */
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #2563eb;
+}
+
+.delete-btn {
+    background: #ef4444; /* Красный для удаления */
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+.no-results-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    color: #6b7280;
+    border: 2px dashed #d1d5db;
+}

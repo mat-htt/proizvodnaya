@@ -1,11 +1,13 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import RegisterView, SubmitTestView, TeacherResultsView, LectureViewSet, TestViewSet, MeView, GroupListView, SubmissionDetailView
+from .views import RegisterView, SubmitTestView, TeacherResultsView, LectureViewSet, TestViewSet, MeView, GroupListView, SubmissionDetailView, QuestionViewSet, ChoiceViewSet
 
 # Роутер автоматически создает пути для стандартных действий (список, создание, удаление)
 router = DefaultRouter()
 router.register(r'lectures', LectureViewSet, basename='lecture')
 router.register(r'tests', TestViewSet, basename='test')
+router.register(r'questions', QuestionViewSet, basename='question')
+router.register(r'choices', ChoiceViewSet, basename='choice')
 
 urlpatterns = [
     # Подключаем автоматические пути роутера (api/tests/ и api/lectures/)

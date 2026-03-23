@@ -20,7 +20,11 @@ const Header = ({ user, onLogout }) => {
         {user.isLoggedIn ? (
           <>
             {user.isTeacher && (
-              <Link to="/teacher" className="header-link">Панель учителя</Link>
+              <>
+                <Link to="/teacher" className="header-link">Панель учителя</Link>
+                <Link to="/manage-tests" className="header-link">Список тестов</Link>
+                <Link to="/create-test" className="header-link">Создать тест</Link>
+              </>
             )}
             <button onClick={handleLogout} className="logout-btn">Выйти</button>
           </>

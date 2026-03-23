@@ -1,0 +1,117 @@
+.create-test-page {
+    background: #f3f4f6;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.create-test-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    color: #1a3c34;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-input, .main-select, .main-textarea {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.main-textarea { min-height: 80px; resize: vertical; }
+
+.question-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #10b981;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.q-text-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.choice-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.choice-row input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+}
+
+.add-choice-btn {
+    background: none;
+    border: none;
+    color: #059669;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 5px 0;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.add-q-btn {
+    flex: 1;
+    padding: 15px;
+    background: white;
+    border: 2px dashed #10b981;
+    color: #10b981;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit-test-btn {
+    flex: 1;
+    padding: 15px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit-test-btn:disabled { background: #9ca3af; }
+.remove-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #ef4444; }

@@ -15,6 +15,9 @@ import Resources from './pages/Resources';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Contact from './pages/Contact';
+import CreateTest from './pages/CreateTest';
+import ManageTests from './pages/ManageTests';
+import EditTest from './pages/EditTest';
 
 const PrivateRoute = ({ children }) => {
   return localStorage.getItem('access_token') ? children : <Navigate to="/login" />;
@@ -73,6 +76,9 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/create-test" element={<PrivateRoute><CreateTest /></PrivateRoute>} />
+            <Route path="/manage-tests" element={<PrivateRoute><ManageTests /></PrivateRoute>} />
+            <Route path="/edit-test/:id" element={<PrivateRoute><EditTest /></PrivateRoute>} />
 
             <Route path="/quiz/:id" element={<PrivateRoute><QuizPage /></PrivateRoute>} />
             <Route path="/teacher" element={<PrivateRoute><TeacherDashboard /></PrivateRoute>} />

@@ -3,9 +3,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from .models import Test, Question, Choice, TestSubmission, StudentResponse, StudentProfile, Lecture, Group
-from .serializers import TestSerializer, TestSubmitSerializer, LectureSerializer, TestSubmissionSerializer, RegisterSerializer
+from .serializers import TestSerializer, TestSubmitSerializer, LectureSerializer, TestSubmissionSerializer, RegisterSerializer, QuestionSerializer, ChoiceSerializer
 from django.contrib.auth.models import User
-
+from django.db import transaction
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
@@ -88,9 +88,100 @@ class LectureViewSet(viewsets.ModelViewSet):
     lookup_field = 'slug'
 
 
-class TestViewSet(viewsets.ReadOnlyModelViewSet):
+class TestViewSet(viewsets.ModelViewSet):
     queryset = Test.objects.all()
     serializer_class = TestSerializer
+
+    def get_permissions(self):
+        # Если кто-то хочет создать или удалить (POST, DELETE, PUT) — только админ/учитель
+        if self.action in ['create', 'destroy', 'update', 'partial_update']:
+            return [IsAdminUser()]
+        # Для простого просмотра списка (list) в панели управления тоже ставим учителя
+        if self.action == 'list':
+            return [IsAdminUser()]
+        # А вот отдельный тест (retrieve) ученик может открыть (когда проходит его)
+        return [IsAuthenticated()]
+
+
+
+    def create(self, request, *args, **kwargs):
+        data = request.data
+        questions_data = data.pop('questions', [])
+        # Извлекаем ID лекции из данных, которые прислал React
+        lecture_id = data.pop('related_lecture', None)
+
+        try:
+            with transaction.atomic():
+                # 1. Создаем тест
+                test = Test.objects.create(
+                    title=data.get('title'),
+                    description=data.get('description', '')
+                )
+
+                # 2. ПРИВЯЗКА К ЛЕКЦИИ (Делаем это здесь, на сервере)
+                if lecture_id:
+                    # Ищем лекцию. Если нашли — обновляем поле related_test
+                    Lecture.objects.filter(id=lecture_id).update(related_test=test)
+                    print(f"Тест {test.id} успешно привязан к лекции {lecture_id}")
+
+                # 3. Создаем вопросы и варианты (твой старый код)
+                for q_item in questions_data:
+                    choices_data = q_item.pop('choices', [])
+                    question = Question.objects.create(
+                        test=test,
+                        text=q_item.get('text'),
+                        q_type=q_item.get('q_type', 'CHOICE')
+                    )
+                    for c_item in choices_data:
+                        Choice.objects.create(
+                            question=question,
+                            text=c_item.get('text'),
+                            is_correct=c_item.get('is_correct', False)
+                        )
+
+                serializer = self.get_serializer(test)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        except Exception as e:
+            print(f"Ошибка при создании: {e}")
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Исправленная строка (убрали звездочку перед pk или убрали =None)
+    def update(self, request, pk=None):
+        test = self.get_object()
+        data = request.data
+
+        with transaction.atomic():
+            # 1. Обновляем основные поля теста
+            test.title = data.get('title', test.title)
+            test.description = data.get('description', test.description)
+            test.save()
+
+            # 2. Удаляем старые вопросы (Choice удалятся каскадно)
+            test.questions.all().delete()
+
+            # 3. Создаем новые вопросы из присланных данных
+            for q_data in data.get('questions', []):
+                question = Question.objects.create(
+                    test=test,
+                    text=q_data['text'],
+                    q_type=q_data.get('q_type', 'CHOICE')
+                )
+                for c_data in q_data.get('choices', []):
+                    Choice.objects.create(
+                        question=question,
+                        text=c_data['text'],
+                        is_correct=c_data['is_correct']
+                    )
+
+            # 4. Привязка к лекции (если передана)
+            lecture_id = data.get('lecture_id')
+            if lecture_id:
+                Lecture.objects.filter(related_test=test).update(related_test=None)
+                Lecture.objects.filter(id=lecture_id).update(related_test=test)
+
+        serializer = self.get_serializer(test)
+        return Response(serializer.data)
 
 
 class MeView(APIView):
@@ -144,3 +235,14 @@ class SubmissionDetailView(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except TestSubmission.DoesNotExist:
             return Response({"error": "Результат не найден"}, status=status.HTTP_404_NOT_FOUND)
+
+
+class QuestionViewSet(viewsets.ModelViewSet):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
+    permission_classes = [IsAdminUser] # Чтобы только учителя могли создавать
+
+class ChoiceViewSet(viewsets.ModelViewSet):
+    queryset = Choice.objects.all()
+    serializer_class = ChoiceSerializer # Сейчас создадим его
+    permission_classes = [IsAdminUser]
