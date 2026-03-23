@@ -103,6 +103,11 @@ class Lecture(models.Model):
 
 
 @receiver(post_save, sender=User)
-def create_student_profile(sender, instance, created, **kwargs):
+def create_student_profile(sender, instance, created, raw, **kwargs):
+    # Если raw=True, значит данные идут из фикстур (loaddata),
+    # и нам НЕ НУЖНО создавать профиль автоматически.
+    if raw:
+        return
+
     if created:
         StudentProfile.objects.create(user=instance)
