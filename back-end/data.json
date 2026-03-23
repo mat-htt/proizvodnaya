@@ -1,0 +1,2858 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2026-03-01T19:06:11.657Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "5k9391",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2026-03-01T19:07:15.876Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "matvey",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2026-03-01T19:07:24.861Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": " ",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2026-03-01T19:23:13.177Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "1ый тест",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2026-03-01T19:23:43.450Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "1ый тест | 1 вопрос 1 теста",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2026-03-01T19:23:58.715Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "1ый тест | 2 вопрос 2 теста",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2026-03-01T19:49:42.885Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Производные (начало)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2026-03-01T20:18:09.533Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "1",
+        "object_repr": "новая лекция",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2026-03-01T20:18:45.305Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "2",
+        "object_repr": "2 лекция",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2026-03-01T20:18:57.685Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "3",
+        "object_repr": "3 лекция",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2026-03-15T15:29:02.864Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "4",
+        "object_repr": "opredelenie-proizvodnoy",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2026-03-15T19:27:03.060Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "3",
+        "object_repr": "user1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2026-03-15T19:27:50.719Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "3",
+        "object_repr": "user1",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2026-03-15T19:28:00.922Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "4",
+        "object_repr": "user2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2026-03-15T19:28:04.282Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "4",
+        "object_repr": "user2",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2026-03-15T19:28:15.445Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "5",
+        "object_repr": "user3",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2026-03-15T19:28:18.433Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "5",
+        "object_repr": "user3",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2026-03-15T19:28:31.346Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "5k9391",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2026-03-15T19:28:40.573Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "5k9391",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2026-03-15T19:28:46.240Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "5k9393",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2026-03-15T19:28:53.308Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "5k9396",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2026-03-15T19:29:31.883Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "test_1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2026-03-15T19:30:12.341Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "test_1 | 1?",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2026-03-15T19:30:24.426Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "test_1 | 2?",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2026-03-15T19:31:35.169Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2026-03-15T19:31:47.299Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2026-03-15T19:37:01.144Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "5",
+        "object_repr": "1st_lection",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2026-03-15T19:56:04.694Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2026-03-15T20:05:34.595Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2026-03-15T20:08:04.314Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2026-03-15T20:14:25.199Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2026-03-15T20:20:44.119Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2026-03-15T20:23:26.870Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2026-03-15T20:26:36.316Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2026-03-15T20:27:55.676Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2026-03-15T20:29:02.876Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2026-03-15T20:29:19.465Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2026-03-15T20:29:53.349Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2026-03-15T20:33:57.201Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2026-03-15T20:38:42.170Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2026-03-15T20:39:08.870Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2026-03-15T20:41:19.221Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2026-03-15T20:59:35.828Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2026-03-15T21:02:51.619Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2026-03-15T21:03:50.124Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2026-03-16T03:25:35.487Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "Основы производной",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2026-03-16T03:26:12.744Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "5",
+        "object_repr": "Производные (начало) | В реальных задачах, что именно",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2026-03-16T03:26:24.053Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2026-03-16T03:26:24.053Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "2",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2026-03-16T03:26:46.351Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Мгновенную скорость изменения величины",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2026-03-16T03:27:05.979Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Среднюю скорость на всем пути",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2026-03-16T03:27:20.182Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Константную скорость изменения",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2026-03-16T03:27:32.400Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "Максимальное значение функции",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2026-03-16T03:28:08.019Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "6",
+        "object_repr": "Основы производной | Что представляет собой прираще",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2026-03-16T03:28:31.110Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "Максимальное значение функции",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2026-03-16T03:28:31.110Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Константную скорость изменения",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2026-03-16T03:28:31.110Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Среднюю скорость на всем пути",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2026-03-16T03:28:31.110Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Мгновенную скорость изменения величины",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2026-03-16T03:28:52.148Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "7",
+        "object_repr": "$f(x_0 + \\Delta x) - f(x_0)$",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2026-03-16T03:29:05.874Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "8",
+        "object_repr": "$f(x_0) - f(x_0 + \\Delta x)$",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2026-03-16T03:29:44.429Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "9",
+        "object_repr": "$\\dfrac{f(x_0 + \\Delta x)}{\\Delta x}$",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2026-03-16T03:29:58.175Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "10",
+        "object_repr": "$f'(x_0) \\cdot \\Delta x$",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+        "action_time": "2026-03-16T03:30:26.745Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "7",
+        "object_repr": "Основы производной | Как называется тангенс угла на",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+        "action_time": "2026-03-16T03:30:44.087Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "11",
+        "object_repr": "Приращение аргумента",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+        "action_time": "2026-03-16T03:31:01.858Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "12",
+        "object_repr": "Производная функции",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+        "action_time": "2026-03-16T03:31:20.128Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "13",
+        "object_repr": "Мгновенная скорость",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+        "action_time": "2026-03-16T03:31:30.737Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "14",
+        "object_repr": "Средняя скорость",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+        "action_time": "2026-03-16T03:31:55.604Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "8",
+        "object_repr": "Основы производной | Выберите правильное обозначени",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+        "action_time": "2026-03-16T03:32:13.624Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "15",
+        "object_repr": "$\\Delta f$",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+        "action_time": "2026-03-16T03:32:24.074Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "16",
+        "object_repr": "$f(x + \\Delta x)$",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+        "action_time": "2026-03-16T03:32:40.932Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "17",
+        "object_repr": "$f'(x)$",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+        "action_time": "2026-03-16T03:33:08.266Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "9",
+        "object_repr": "Основы производной | Если $\\Delta t$ стремится к ну",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+        "action_time": "2026-03-16T03:33:29.917Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "18",
+        "object_repr": "Средней скорости на всем пути",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+        "action_time": "2026-03-16T03:33:41.307Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "19",
+        "object_repr": "Бесконечности",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+        "action_time": "2026-03-16T03:33:51.180Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "20",
+        "object_repr": "Нулю",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+        "action_time": "2026-03-16T03:34:04.205Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "21",
+        "object_repr": "Мгновенной скорости",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+        "action_time": "2026-03-16T03:34:54.985Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0432\\u044f\\u0437\\u0430\\u043d\\u043d\\u044b\\u0439 \\u0442\\u0435\\u0441\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+        "action_time": "2026-03-22T17:09:05.424Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "7",
+        "object_repr": "user11",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+        "action_time": "2026-03-22T21:08:18.525Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "Правила вычисления производных",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+        "action_time": "2026-03-22T21:10:28.023Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "Правила вычисления производных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+        "action_time": "2026-03-22T21:11:01.507Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "Правила вычисления производных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+        "action_time": "2026-03-22T21:14:50.488Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "Правила вычисления производных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+        "action_time": "2026-03-22T21:17:52.670Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "Правила вычисления производных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430 \\u043d\\u0430 \\u0432\\u0438\\u0434\\u0435\\u043e (YouTube)\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+        "action_time": "2026-03-22T21:19:14.814Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "Правила вычисления производных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430 \\u043d\\u0430 \\u0432\\u0438\\u0434\\u0435\\u043e (YouTube)\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+        "action_time": "2026-03-22T21:20:51.627Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "Правила вычисления производных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430 \\u043d\\u0430 \\u0432\\u0438\\u0434\\u0435\\u043e (YouTube)\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+        "action_time": "2026-03-22T21:55:34.952Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "8",
+        "object_repr": "Геометрический смысл производной",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+        "action_time": "2026-03-22T21:55:55.877Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "9",
+        "object_repr": "Возрастание и убывание функции",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+        "action_time": "2026-03-22T21:56:15.082Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "10",
+        "object_repr": "Промежутки монотонности",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+        "action_time": "2026-03-22T21:56:33.237Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "11",
+        "object_repr": "Экстремумы и критические точки",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+        "action_time": "2026-03-22T21:58:10.605Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "8",
+        "object_repr": "Геометрический смысл производной",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+        "action_time": "2026-03-22T21:59:28.514Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "9",
+        "object_repr": "3.2 Возрастание и убывание функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\", \"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+        "action_time": "2026-03-22T21:59:39.928Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "8",
+        "object_repr": "3.1 Геометрический смысл производной",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+        "action_time": "2026-03-22T21:59:48.304Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "1. Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+        "action_time": "2026-03-22T21:59:54.056Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "2. Правила вычисления производных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+        "action_time": "2026-03-22T22:01:14.763Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "10",
+        "object_repr": "3.3 Промежутки монотонности",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\", \"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+        "action_time": "2026-03-22T22:02:42.621Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "11",
+        "object_repr": "3.4 Экстремумы и критические точки",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\", \"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u0438\\u0435 \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+        "action_time": "2026-03-23T07:04:31.245Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "5",
+        "object_repr": "1st_lection",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+        "action_time": "2026-03-23T07:04:31.245Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "4",
+        "object_repr": "opredelenie-proizvodnoy",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+        "action_time": "2026-03-23T07:04:31.245Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "3",
+        "object_repr": "3 лекция",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+        "action_time": "2026-03-23T07:04:31.245Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "2",
+        "object_repr": "2 лекция",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+        "action_time": "2026-03-23T07:04:31.245Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "1",
+        "object_repr": "новая лекция",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+        "action_time": "2026-03-23T07:06:14.205Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "12",
+        "object_repr": "4. Применение производной к исследованию функций",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+        "action_time": "2026-03-23T07:11:51.457Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "2. Правила вычисления производных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+        "action_time": "2026-03-23T07:13:04.650Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "2. Правила вычисления производных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+        "action_time": "2026-03-23T07:16:44.772Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "8",
+        "object_repr": "3.1 Геометрический смысл производной",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+        "action_time": "2026-03-23T07:34:27.381Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "Основы производной",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+        "action_time": "2026-03-23T07:34:27.381Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "test_1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+        "action_time": "2026-03-23T07:34:27.381Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Производные (начало)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+        "action_time": "2026-03-23T07:34:27.381Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "1ый тест",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+        "action_time": "2026-03-23T07:34:43.276Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "Определение производной функции",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+        "action_time": "2026-03-23T07:35:35.534Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "10",
+        "object_repr": "Определение производной функции | Что показывает средняя скорост",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+        "action_time": "2026-03-23T07:35:49.718Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "11",
+        "object_repr": "Определение производной функции | Как вычисляется средняя скорос",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+        "action_time": "2026-03-23T07:36:04.736Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "12",
+        "object_repr": "Определение производной функции | Что происходит со средней скор",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 114,
+    "fields": {
+        "action_time": "2026-03-23T07:36:20.099Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "13",
+        "object_repr": "Определение производной функции | Как называется величина:\r\n\r\nΔ\r",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 115,
+    "fields": {
+        "action_time": "2026-03-23T07:36:29.991Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "14",
+        "object_repr": "Определение производной функции | Что такое приращение аргумента",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 116,
+    "fields": {
+        "action_time": "2026-03-23T07:36:41.519Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "15",
+        "object_repr": "Определение производной функции | Как вычисляется отношение прир",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 117,
+    "fields": {
+        "action_time": "2026-03-23T07:36:51.620Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "16",
+        "object_repr": "Определение производной функции | Что показывает отношение \r\nΔ\r\n",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 118,
+    "fields": {
+        "action_time": "2026-03-23T07:37:05.493Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "17",
+        "object_repr": "Определение производной функции | Как обозначается производная ф",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 119,
+    "fields": {
+        "action_time": "2026-03-23T07:37:12.992Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "18",
+        "object_repr": "Определение производной функции | Какой геометрический смысл име",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 120,
+    "fields": {
+        "action_time": "2026-03-23T07:37:22.125Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "19",
+        "object_repr": "Определение производной функции | Как можно описать производную ",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 121,
+    "fields": {
+        "action_time": "2026-03-23T07:38:07.634Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "22",
+        "object_repr": "Как быстро меняется функция в данный момент",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 122,
+    "fields": {
+        "action_time": "2026-03-23T07:38:24.296Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "23",
+        "object_repr": "Отношение пройденного пути к времени",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 123,
+    "fields": {
+        "action_time": "2026-03-23T07:38:33.162Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "24",
+        "object_repr": "Производную функции",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 124,
+    "fields": {
+        "action_time": "2026-03-23T07:38:43.345Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "25",
+        "object_repr": "Приращение аргумента",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 125,
+    "fields": {
+        "action_time": "2026-03-23T07:39:20.143Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "26",
+        "object_repr": "Δ 𝑡 Δ 𝑠",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 126,
+    "fields": {
+        "action_time": "2026-03-23T07:39:30.822Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "27",
+        "object_repr": "𝑠 ( 𝑡 0 + Δ 𝑡 ) − 𝑠 ( 𝑡 0 )",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 127,
+    "fields": {
+        "action_time": "2026-03-23T07:39:43.802Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "28",
+        "object_repr": "𝑠 ( 𝑡 0 + Δ 𝑡 ) − 𝑠 ( 𝑡 0 ) Δ 𝑡",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 128,
+    "fields": {
+        "action_time": "2026-03-23T07:39:55.345Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "29",
+        "object_repr": "𝑑 𝑠 𝑑 𝑡",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 129,
+    "fields": {
+        "action_time": "2026-03-23T07:40:39.227Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "30",
+        "object_repr": "Она становится равной нулю",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 130,
+    "fields": {
+        "action_time": "2026-03-23T07:40:49.571Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "31",
+        "object_repr": "Она превращается в мгновенную скорость",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 131,
+    "fields": {
+        "action_time": "2026-03-23T07:41:04.630Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "32",
+        "object_repr": "Она становится бесконечной",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 132,
+    "fields": {
+        "action_time": "2026-03-23T07:41:18.915Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "33",
+        "object_repr": "Она перестаёт существовать",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 133,
+    "fields": {
+        "action_time": "2026-03-23T07:41:28.653Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "31",
+        "object_repr": "Она превращается в мгновенную скорость",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 134,
+    "fields": {
+        "action_time": "2026-03-23T07:44:28.319Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "1. Определение производной функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0432\\u044f\\u0437\\u0430\\u043d\\u043d\\u044b\\u0439 \\u0442\\u0435\\u0441\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 135,
+    "fields": {
+        "action_time": "2026-03-23T09:41:33.781Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "9",
+        "object_repr": "3.2 Возрастание и убывание функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 136,
+    "fields": {
+        "action_time": "2026-03-23T09:41:55.645Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "9",
+        "object_repr": "3.2 Возрастание и убывание функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 137,
+    "fields": {
+        "action_time": "2026-03-23T09:50:17.246Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "9",
+        "object_repr": "3.2 Возрастание и убывание функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 138,
+    "fields": {
+        "action_time": "2026-03-23T09:50:59.241Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "10",
+        "object_repr": "3.3 Промежутки монотонности",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 139,
+    "fields": {
+        "action_time": "2026-03-23T09:51:52.869Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "10",
+        "object_repr": "3.3 Промежутки монотонности",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 140,
+    "fields": {
+        "action_time": "2026-03-23T09:52:56.964Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "11",
+        "object_repr": "3.4 Экстремумы и критические точки",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 141,
+    "fields": {
+        "action_time": "2026-03-23T09:53:44.085Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "12",
+        "object_repr": "4. Применение производной к исследованию функций",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0443\\u0442\\u044c \\u043a \\u043f\\u0440\\u0435\\u0432\\u044c\\u044e-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 142,
+    "fields": {
+        "action_time": "2026-03-23T19:43:35.715Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "8",
+        "object_repr": "тестовый тест сапсва",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 143,
+    "fields": {
+        "action_time": "2026-03-23T19:43:35.715Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "7",
+        "object_repr": "тест1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 144,
+    "fields": {
+        "action_time": "2026-03-23T19:43:35.715Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "6",
+        "object_repr": "тест1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 145,
+    "fields": {
+        "action_time": "2026-03-23T19:43:35.715Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "Определение производной функции",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 3,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 3,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 3,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 3,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 2,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 2,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 2,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 2,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 8,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 8,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 8,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 8,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add question",
+        "content_type": 9,
+        "codename": "add_question"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change question",
+        "content_type": 9,
+        "codename": "change_question"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete question",
+        "content_type": 9,
+        "codename": "delete_question"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view question",
+        "content_type": 9,
+        "codename": "view_question"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add test",
+        "content_type": 12,
+        "codename": "add_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change test",
+        "content_type": 12,
+        "codename": "change_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete test",
+        "content_type": 12,
+        "codename": "delete_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view test",
+        "content_type": 12,
+        "codename": "view_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add choice",
+        "content_type": 7,
+        "codename": "add_choice"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change choice",
+        "content_type": 7,
+        "codename": "change_choice"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete choice",
+        "content_type": 7,
+        "codename": "delete_choice"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view choice",
+        "content_type": 7,
+        "codename": "view_choice"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add student profile",
+        "content_type": 10,
+        "codename": "add_studentprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change student profile",
+        "content_type": 10,
+        "codename": "change_studentprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete student profile",
+        "content_type": 10,
+        "codename": "delete_studentprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view student profile",
+        "content_type": 10,
+        "codename": "view_studentprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add test submission",
+        "content_type": 13,
+        "codename": "add_testsubmission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change test submission",
+        "content_type": 13,
+        "codename": "change_testsubmission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete test submission",
+        "content_type": 13,
+        "codename": "delete_testsubmission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view test submission",
+        "content_type": 13,
+        "codename": "view_testsubmission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add student response",
+        "content_type": 11,
+        "codename": "add_studentresponse"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change student response",
+        "content_type": 11,
+        "codename": "change_studentresponse"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete student response",
+        "content_type": 11,
+        "codename": "delete_studentresponse"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view student response",
+        "content_type": 11,
+        "codename": "view_studentresponse"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add lecture",
+        "content_type": 14,
+        "codename": "add_lecture"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change lecture",
+        "content_type": 14,
+        "codename": "change_lecture"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete lecture",
+        "content_type": 14,
+        "codename": "delete_lecture"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view lecture",
+        "content_type": 14,
+        "codename": "view_lecture"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$n5rVhpiLvcUG9WFXBFSYYn$g0HE3TfXiHFd1TrWusEL7caP82wQ/kwhwOpQDTS1c6I=",
+        "last_login": "2026-03-15T13:56:08.401Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-03-01T18:36:40.756Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$iAses5TzCOHrFacJtioThQ$9x/MQ6KudDTm9Zcqw0IGL8zSILK89K3LFjETQxyLY10=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "matvey",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-03-01T19:07:15.361Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$whRqvwMDAUui7Lyw2aVg3p$Qpl0siGIIWyDMe5gpfsYguVwCTjV1mPiLEA5if4r2UQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user1",
+        "first_name": "user1",
+        "last_name": "user1",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-03-15T19:27:02Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$CW8EnCOVTgej0IijpeJ9MC$UgjPNsVE1ahzgSB/P41bn5PeLz3pnVVq1PT15I6wB2Q=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user2",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-03-15T19:28:00Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$E7GVgMG3vVZ1sE0g375CRd$NK/cES2JBLqtUchcM0/Y1Vi0fNDFHOxqQ4hmvEoDZDs=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user3",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-03-15T19:28:14Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$AsHODItqaVdE49gpR50Uyv$NhJxNpYQa+1gLK3gEKq3MW5g9FREQaPFSGI3DWZEoI0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user1111",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-03-22T14:18:00.305Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$YtOXAm0lOZ0GAWBPJ9Tmkj$AeGlcM7hapa4Z01IwWliT2E6+xtTNRKiBxDdBJ5PW7M=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user11",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-03-22T14:18:28Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$baQhrAFyvAOi4H7Jyt7KP1$QYuMn6mMxl9u93CchoLVksMnGHv0QAhuAcXgNLZ1xN0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ученик1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-03-22T17:10:58.932Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$vgaTVHifqrRcqUHT3tgpY5$RpBr1/qyviPHPDaI0PrJgT8tljs5yE4gprszeMDsU/k=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "фффф",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-03-22T18:20:46.979Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$Olt8OPT7DvrSEEF52BAYQi$HezXTt5lPa+ugHVt95Dh2lXNecOVNqt54MST1xoVMn4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ааааа",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-03-23T10:04:40.158Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "education",
+        "model": "choice"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "education",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "education",
+        "model": "question"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "education",
+        "model": "studentprofile"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "education",
+        "model": "studentresponse"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "education",
+        "model": "test"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "education",
+        "model": "testsubmission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "education",
+        "model": "lecture"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "x6hfmqir52xrkyc2e9vkl6t0esx3xjz8",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hCYDlBcuvcMBIapVA0kpV0Z765NutDtf-_9lwhxW0vYOi9hzuIstDj9binSg-sO8j3WW5PU6rrMSe6KPGiX15b5eTncv4MSe_nW6DUxajXaEZx32gBSIlYTWJOydYOGzIk9OoyDRbbGaccAGUhNA6N4fwC8fzcV:1vwlfg:c0i1gBIofvJhT81L2bE_koxGxPAfpWpnmOfHvMTAOGo",
+        "expire_date": "2026-03-15T18:37:40.059Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "z6nb29pqcxcn2j3errpo306xtp1l05jt",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hCYDlBcuvcMBIapVA0kpV0Z765NutDtf-_9lwhxW0vYOi9hzuIstDj9binSg-sO8j3WW5PU6rrMSe6KPGiX15b5eTncv4MSe_nW6DUxajXaEZx32gBSIlYTWJOydYOGzIk9OoyDRbbGaccAGUhNA6N4fwC8fzcV:1w1lwu:UmbX4-8I5AhW-SkfjAfnLk33IsHuFo7BBQTSjuKOOBc",
+        "expire_date": "2026-03-29T13:56:08.407Z"
+    }
+},
+{
+    "model": "education.group",
+    "pk": 1,
+    "fields": {
+        "name": "5k9391"
+    }
+},
+{
+    "model": "education.group",
+    "pk": 3,
+    "fields": {
+        "name": "5k9393"
+    }
+},
+{
+    "model": "education.group",
+    "pk": 4,
+    "fields": {
+        "name": "5k9396"
+    }
+},
+{
+    "model": "education.studentprofile",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "group": 1,
+        "phone": ""
+    }
+},
+{
+    "model": "education.studentprofile",
+    "pk": 2,
+    "fields": {
+        "user": 6,
+        "group": null,
+        "phone": ""
+    }
+},
+{
+    "model": "education.studentprofile",
+    "pk": 3,
+    "fields": {
+        "user": 7,
+        "group": null,
+        "phone": ""
+    }
+},
+{
+    "model": "education.studentprofile",
+    "pk": 4,
+    "fields": {
+        "user": 8,
+        "group": null,
+        "phone": ""
+    }
+},
+{
+    "model": "education.studentprofile",
+    "pk": 5,
+    "fields": {
+        "user": 9,
+        "group": 1,
+        "phone": ""
+    }
+},
+{
+    "model": "education.studentprofile",
+    "pk": 6,
+    "fields": {
+        "user": 10,
+        "group": 1,
+        "phone": ""
+    }
+},
+{
+    "model": "education.lecture",
+    "pk": 6,
+    "fields": {
+        "title": "1. Определение производной функции",
+        "slug": "opredelenie-proizvodnoy1",
+        "image_url": "https://st2.depositphotos.com/3351183/12376/v/450/depositphotos_123762414-stock-illustration-chalk-drawing-mathematics-symbols-on.jpg",
+        "content": "<h2 style=\"text-align: center; color: #1a3c34; margin: 0 0 2.5rem 0; font-size: 2.4rem;\">\r\n  Определение производной функции\r\n</h2>\r\n\r\n<div style=\"max-width: 920px; margin: 0 auto; font-size: 1.13rem; line-height: 1.82; text-align: center; color: #1f2937;\">\r\n\r\n  <p style=\"margin-bottom: 2rem;\">\r\n    В реальных задачах скорость изменения любой величины почти никогда не бывает постоянной.  \r\n    Чтобы описать, насколько быстро меняется функция в каждый отдельный момент, математика вводит понятие <strong>производной</strong>.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 3.2rem 0 1.6rem; font-size: 1.9rem;\">\r\n    1. Средняя и мгновенная скорость\r\n  </h3>\r\n\r\n  <p>Рассмотрим движение тела. Пройденный путь $s$ зависит от времени $t$.</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-125-s-vt.png\" alt=\"График s = v t при постоянной скорости\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p style=\"margin: 1.6rem 0;\">Средняя скорость на участке от $t_0$ до $t_0 + \\Delta t$:</p>\r\n\r\n  <p style=\"font-size: 1.5rem; color: #065f46; margin: 1.8rem 0; font-weight: 500;\">\r\n    $$ v_{\\text{ср}} = \\dfrac{\\Delta s}{\\Delta t} = \\dfrac{s(t_0 + \\Delta t) - s(t_0)}{\\Delta t} $$\r\n  </p>\r\n\r\n  <p style=\"margin: 1.8rem 0;\">\r\n    Когда промежуток времени $\\Delta t$ становится очень маленьким,  \r\n    средняя скорость приближается к <strong>мгновенной скорости</strong> в момент $t_0$.\r\n  </p>\r\n\r\n  <p style=\"font-size: 1.5rem; color: #065f46; margin: 2.2rem 0; font-weight: 500;\">\r\n    мгновенная скорость = число, к которому стремится $\\dfrac{\\Delta s}{\\Delta t}$ при очень малом $\\Delta t$\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    2. Приращение функции\r\n  </h3>\r\n\r\n  <p style=\"margin-bottom: 1.8rem;\">\r\n    Чтобы понять, как меняется функция $y = f(x)$, рассматриваем её изменение при небольшом изменении аргумента.\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-126-priroshchenie-s-t.png\" alt=\"Приращение пути за малое время Δt\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p style=\"margin: 2rem 0 1rem;\">Порядок нахождения приращения функции:</p>\r\n\r\n  <ol style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 2.5rem; list-style-position: inside; padding-left: 2rem; line-height: 1.9;\">\r\n    <li>Выбрать начальное значение аргумента $x_0$</li>\r\n    <li>Найти значение функции $f(x_0)$</li>\r\n    <li>Дать аргументу небольшое приращение $\\Delta x$</li>\r\n    <li>Вычислить новое значение $f(x_0 + \\Delta x)$</li>\r\n    <li>Найти приращение функции: $\\Delta y = f(x_0 + \\Delta x) - f(x_0)$</li>\r\n  </ol>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    3. Производная — отношение приращений\r\n  </h3>\r\n\r\n  <p style=\"margin-bottom: 1.8rem;\">\r\n    Когда приращение аргумента $\\Delta x$ становится очень маленьким и стремится к нулю,  \r\n    отношение приращений $\\dfrac{\\Delta y}{\\Delta x}$ приближается к некоторому числу.  \r\n    Это число и называется <strong>производной функции</strong> в точке $x_0$.\r\n  </p>\r\n\r\n  <div style=\"margin: 3.2rem auto; max-width: 800px;\">\r\n    <img src=\"/images/ris-priroshchenie-x2.png\" alt=\"Приращение функции y = x² и касательная\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 12px 36px rgba(0,0,0,0.12);\">\r\n  </div>\r\n\r\n  <p style=\"font-size: 1.5rem; color: #065f46; margin: 2.5rem 0; font-weight: 500;\">\r\n    производная $f'(x_0)$ — это число, к которому стремится $\\dfrac{\\Delta y}{\\Delta x}$ при очень малом $\\Delta x$\r\n  </p>\r\n\r\n  <p style=\"font-size: 1.45rem; margin: 2.2rem 0;\">\r\n    $$ f'(x_0) = \\dfrac{f(x_0 + \\Delta x) - f(x_0)}{\\Delta x} \\quad \\text{(когда $\\Delta x$ очень мало)} $$\r\n  </p>\r\n\r\n  <p style=\"margin: 1.8rem 0 3rem;\">\r\n    Обозначается $f'(x)$ или $y'$ и читается «эф штрих от икс» или «игрек штрих».\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4.5rem 0 1.6rem; font-size: 1.9rem;\">\r\n    Краткие выводы\r\n  </h3>\r\n\r\n  <ul style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 3rem; list-style: none; padding-left: 0; font-size: 1.16rem; line-height: 2;\">\r\n    <li style=\"margin: 1.2rem 0;\">• Производная показывает, с какой скоростью меняется функция именно в данный момент</li>\r\n    <li style=\"margin: 1.2rem 0;\">• Это число, к которому стремится отношение приращения функции к приращению аргумента при очень малом изменении аргумента</li>\r\n    <li style=\"margin: 1.2rem 0;\">• На графике функции — это тангенс угла наклона касательной к кривой</li>\r\n  </ul>\r\n\r\n  <p style=\"margin-top: 4rem; font-style: italic; color: #4b5563; font-size: 1.1rem;\">\r\n    В следующей теме разберём простые правила, по которым можно находить производные без таких длинных рассуждений.\r\n  </p>\r\n\r\n</div>",
+        "video_url": "https://www.youtube.com/watch?v=CrkyhO6RJTc",
+        "related_test": null
+    }
+},
+{
+    "model": "education.lecture",
+    "pk": 7,
+    "fields": {
+        "title": "2. Правила вычисления производных",
+        "slug": "pravila-vychisleniya-proizvodnyh",
+        "image_url": "https://spravochnick.ru/assets/files/articles/math308.png",
+        "content": "<h2 style=\"text-align: center; color: #1a3c34; margin: 0 0 2.5rem 0; font-size: 2.4rem;\">\r\n  Правила вычисления производных\r\n</h2>\r\n\r\n<div style=\"max-width: 920px; margin: 0 auto; font-size: 1.13rem; line-height: 1.82; text-align: center; color: #1f2937;\">\r\n\r\n  <p style=\"margin-bottom: 2rem;\">\r\n    Вычислять производную по определению — долго и неудобно. Поэтому в математике сформулированы \r\n    <strong>правила дифференцирования</strong>, которые позволяют находить производные быстро и эффективно.\r\n  </p>\r\n\r\n  <!-- 1. Таблица производных -->\r\n  <h3 style=\"color: #2f855a; margin: 3.2rem 0 1.6rem; font-size: 1.9rem;\">\r\n    1. Таблица производных простейших функций\r\n  </h3>\r\n\r\n  <p>Основные формулы, которые нужно знать наизусть:</p>\r\n\r\n  <div style=\"margin: 2.5rem auto; overflow-x: auto; max-width: 600px;\">\r\n    <table style=\"width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e5e7eb;\">\r\n      <thead>\r\n        <tr style=\"background-color: #2f855a; color: white;\">\r\n          <th style=\"padding: 15px; border: 1px solid #276749;\">Функция $f(x)$</th>\r\n          <th style=\"padding: 15px; border: 1px solid #276749;\">Производная $f'(x)$</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">Константа $C$</td>\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">$0$</td>\r\n        </tr>\r\n        <tr style=\"background-color: #f9fafb;\">\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">Аргумент $x$</td>\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">$1$</td>\r\n        </tr>\r\n        <tr>\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">Степень $x^n$</td>\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">$nx^{n-1}$</td>\r\n        </tr>\r\n        <tr style=\"background-color: #f9fafb;\">\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">Линейная $kx + b$</td>\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">$k$</td>\r\n        </tr>\r\n        <tr>\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">Дробь $\\frac{1}{x}$</td>\r\n          <td style=\"padding: 12px; border: 1px solid #e5e7eb;\">$-\\frac{1}{x^2}$</td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n\r\n  <!-- 2. Правила -->\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    2. Основные правила дифференцирования\r\n  </h3>\r\n\r\n  <div style=\"text-align: left; max-width: 750px; margin: 0 auto; background: #f0fdf4; padding: 2rem; border-radius: 14px; border: 1px solid #dcfce7;\">\r\n\r\n    <p><strong>1) Производная суммы:</strong></p>\r\n    <p style=\"font-size: 1.4rem; color: #065f46; text-align: center;\">\r\n      $(U + V)' = U' + V'$\r\n    </p>\r\n\r\n    <p><strong>2) Производная разности:</strong></p>\r\n    <p style=\"font-size: 1.4rem; color: #065f46; text-align: center;\">\r\n      $(U - V)' = U' - V'$\r\n    </p>\r\n\r\n    <p><strong>3) Вынос постоянного множителя:</strong></p>\r\n    <p style=\"font-size: 1.4rem; color: #065f46; text-align: center;\">\r\n      $(C \\cdot U)' = C \\cdot U'$\r\n    </p>\r\n\r\n    <p><strong>4) Производная произведения:</strong></p>\r\n    <p style=\"font-size: 1.4rem; color: #065f46; text-align: center;\">\r\n      $(UV)' = U'V + UV'$\r\n    </p>\r\n\r\n    <p><strong>5) Производная частного:</strong></p>\r\n    <p style=\"font-size: 1.4rem; color: #065f46; text-align: center;\">\r\n      $\\left(\\frac{U}{V}\\right)' = \\frac{U'V - UV'}{V^2}$\r\n    </p>\r\n\r\n    <p><strong>6) Производная степени:</strong></p>\r\n    <p style=\"font-size: 1.4rem; color: #065f46; text-align: center;\">\r\n      $(x^n)' = n x^{n-1}$\r\n    </p>\r\n\r\n  </div>\r\n\r\n  <!-- 3. Примеры -->\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    3. Примеры решения\r\n  </h3>\r\n\r\n  <div style=\"text-align: left; max-width: 720px; margin: 0 auto; line-height: 2;\">\r\n\r\n    <p><strong>Пример 1.</strong> Найти производную:  \r\n      $f(x) = 3x^2 - 5x + 4$</p>\r\n\r\n    <ol>\r\n      <li>$(3x^2)' = 6x$</li>\r\n      <li>$(-5x)' = -5$</li>\r\n      <li>$(4)' = 0$</li>\r\n    </ol>\r\n\r\n    <p style=\"font-weight: 600; color: #065f46;\">Ответ: $f'(x) = 6x - 5$.</p>\r\n\r\n    <br>\r\n\r\n    <p><strong>Пример 2.</strong> Производная произведения:  \r\n      $f(x) = x^2(3x - 1)$</p>\r\n\r\n    <p>$f'(x) = (x^2)'(3x - 1) + x^2(3x - 1)' = 2x(3x - 1) + x^2 \\cdot 3$</p>\r\n\r\n    <p style=\"font-weight: 600; color: #065f46;\">Ответ: $f'(x) = 9x^2 - 2x$.</p>\r\n\r\n    <br>\r\n\r\n    <p><strong>Пример 3.</strong> Производная частного:  \r\n      $f(x) = \\frac{x}{x - 1}$</p>\r\n\r\n    <p>$f'(x) = \\frac{1 \\cdot (x - 1) - 1 \\cdot x}{(x - 1)^2} = -\\frac{1}{(x - 1)^2}$</p>\r\n\r\n    <p style=\"font-weight: 600; color: #065f46;\">Ответ: $f'(x) = -\\frac{1}{(x - 1)^2}$.</p>\r\n\r\n  </div>\r\n\r\n  <!-- Итоги -->\r\n  <h3 style=\"color: #2f855a; margin: 4.5rem 0 1.6rem; font-size: 1.9rem;\">\r\n    Краткие итоги\r\n  </h3>\r\n\r\n  <ul style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 3rem; list-style: none; padding-left: 0; font-size: 1.16rem; line-height: 2;\">\r\n    <li style=\"margin: 1.2rem 0;\">• Производная суммы — сумма производных.</li>\r\n    <li style=\"margin: 1.2rem 0;\">• Множитель можно выносить за знак производной.</li>\r\n    <li style=\"margin: 1.2rem 0;\">• Производная произведения и частного имеют свои формулы.</li>\r\n    <li style=\"margin: 1.2rem 0;\">• Производная степени — $nx^{n-1}$.</li>\r\n    <li style=\"margin: 1.2rem 0;\">• Константа исчезает, линейная функция даёт коэффициент.</li>\r\n  </ul>\r\n\r\n</div>",
+        "video_url": "https://youtu.be/v-TLocgK41U?si=h_PKGXIDxqGJxxZU",
+        "related_test": null
+    }
+},
+{
+    "model": "education.lecture",
+    "pk": 8,
+    "fields": {
+        "title": "3.1 Геометрический смысл производной",
+        "slug": "geometricheskij-smysl-proizvodnoj",
+        "image_url": "https://1cov-edu.ru/image/geometricheskij-smysl-proizvodnoj.png",
+        "content": "<h2 style=\"text-align: center; color: #1a3c34; margin: 0 0 2.5rem 0; font-size: 2.4rem;\">\r\n  Геометрический смысл производной\r\n</h2>\r\n\r\n<div style=\"max-width: 920px; margin: 0 auto; font-size: 1.13rem; line-height: 1.82; text-align: center; color: #1f2937;\">\r\n\r\n  <p style=\"margin-bottom: 2rem;\">\r\n    Производная — это не только скорость изменения функции.  \r\n    У неё есть важный <strong>геометрический смысл</strong>, который связывает алгебру и графики функций.  \r\n    Он основан на понятиях <strong>секущей</strong> и <strong>касательной</strong>.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 3.2rem 0 1.6rem; font-size: 1.9rem;\">\r\n    1. Секущая и её угол наклона\r\n  </h3>\r\n\r\n  <p>\r\n    Пусть дана функция <em>y = f(x)</em>.  \r\n    Возьмём две точки её графика: <em>M₀(x₀; f(x₀))</em> и <em>M(x₀ + Δx; f(x₀ + Δx))</em>.  \r\n    Прямая, проходящая через эти точки, называется <strong>секущей</strong>.\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-128-sekushchaya.png\" alt=\"Секущая к графику функции\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    Тангенс угла наклона секущей к оси абсцисс равен:\r\n  </p>\r\n\r\n  <p style=\"font-size: 1.5rem; color: #065f46; margin: 1.8rem 0; font-weight: 500;\">\r\n    $$ \\tan \\beta = \\frac{\\Delta f}{\\Delta x} = \\frac{f(x₀ + Δx) - f(x₀)}{Δx} $$\r\n  </p>\r\n\r\n  <p>\r\n    Это — <strong>средняя скорость изменения функции</strong> на промежутке длиной Δx.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    2. Переход от секущей к касательной\r\n  </h3>\r\n\r\n  <p>\r\n    Теперь будем уменьшать Δx.  \r\n    Точка M приближается к M₀, и секущая постепенно «поворачивается», стремясь занять положение <strong>касательной</strong>.\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-129-kasatelnaya.png\" alt=\"Касательная как предел секущих\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    В пределе, когда Δx → 0, секущая превращается в касательную, а угол β превращается в угол α.\r\n  </p>\r\n\r\n  <p style=\"font-size: 1.5rem; color: #065f46; margin: 2rem 0; font-weight: 500;\">\r\n    $$ \\tan \\alpha = \\lim_{\\Delta x \\to 0} \\frac{\\Delta f}{\\Delta x} = f'(x₀) $$\r\n  </p>\r\n\r\n  <p>\r\n    То есть <strong>производная функции в точке</strong> — это <strong>тангенс угла наклона касательной</strong> к графику функции в этой точке.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    3. Как найти угол наклона касательной\r\n  </h3>\r\n\r\n  <p>\r\n    Чтобы определить угол α, нужно:\r\n  </p>\r\n\r\n  <ol style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 2.5rem; list-style-position: inside; padding-left: 2rem; line-height: 1.9;\">\r\n    <li>Найти производную функции f'(x)</li>\r\n    <li>Подставить x₀ → получить f'(x₀)</li>\r\n    <li>Использовать связь: <strong>tan α = f'(x₀)</strong></li>\r\n  </ol>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-130-ugol-pryamoy.png\" alt=\"Угол наклона прямой\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    В зависимости от знака производной:\r\n  </p>\r\n\r\n  <ul style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 2.5rem; list-style: none; padding-left: 0; line-height: 1.9;\">\r\n    <li>• <strong>f'(x₀) > 0</strong> → угол острый</li>\r\n    <li>• <strong>f'(x₀) < 0</strong> → угол тупой</li>\r\n    <li>• <strong>f'(x₀) = 0</strong> → касательная горизонтальна</li>\r\n  </ul>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    4. Пример: найти угол наклона касательной\r\n  </h3>\r\n\r\n  <p><strong>Пример.</strong> Найдите угол наклона касательной к графику функции  \r\n    <em>f(x) = 5x²</em> в точке <em>x₀ = –1</em>.\r\n  </p>\r\n\r\n  <p><strong>1)</strong> Производная:  \r\n    <span style=\"color:#065f46; font-weight:600;\">f'(x) = 10x</span>\r\n  </p>\r\n\r\n  <p><strong>2)</strong> Значение производной в точке:  \r\n    <span style=\"color:#065f46; font-weight:600;\">f'(–1) = –10</span>\r\n  </p>\r\n\r\n  <p><strong>3)</strong> Тангенс угла:  \r\n    <span style=\"color:#065f46; font-weight:600;\">tan α = –10</span>\r\n  </p>\r\n\r\n  <p>\r\n    Так как тангенс отрицателен, угол тупой:  \r\n    <strong>α = π – arctan(10)</strong>.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    5. Когда касательная не существует\r\n  </h3>\r\n\r\n  <p>\r\n    Касательная существует не всегда.  \r\n    Например, у функции <em>y = |x|</em> в точке x = 0 график имеет «излом».\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-131-abs.png\" alt=\"График y = |x|\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    В таких точках производная <strong>не существует</strong>.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    6. Итоги\r\n  </h3>\r\n\r\n  <ul style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 3rem; list-style: none; padding-left: 0; font-size: 1.16rem; line-height: 2;\">\r\n    <li>• Производная — это тангенс угла наклона касательной.</li>\r\n    <li>• Секущая → касательная при Δx → 0.</li>\r\n    <li>• Знак производной определяет тип угла: острый, тупой или нулевой.</li>\r\n    <li>• Если график имеет излом, касательная не существует → производной нет.</li>\r\n  </ul>\r\n\r\n</div>",
+        "video_url": "https://youtu.be/WUvTyaaNkzM",
+        "related_test": null
+    }
+},
+{
+    "model": "education.lecture",
+    "pk": 9,
+    "fields": {
+        "title": "3.2 Возрастание и убывание функции",
+        "slug": "vozrastanie-i-ubyvanie-funkcii",
+        "image_url": "https://www.napishem.ru/wp-content/uploads/2022/01/vozrastanie-i-ubyvanie-funkcii-20-2.png",
+        "content": "<h2 style=\"text-align: center; color: #1a3c34; margin: 0 0 2.5rem 0; font-size: 2.4rem;\">\r\n  Возрастание и убывание функции. Связь со знаком производной\r\n</h2>\r\n\r\n<div style=\"max-width: 920px; margin: 0 auto; font-size: 1.13rem; line-height: 1.82; text-align: center; color: #1f2937;\">\r\n\r\n  <p style=\"margin-bottom: 2rem;\">\r\n    Производная функции — это не только скорость изменения и не только угол наклона касательной.  \r\n    Она также позволяет определить, <strong>возрастает</strong> функция или <strong>убывает</strong> на данном промежутке.  \r\n    Это один из важнейших инструментов анализа графиков.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 3.2rem 0 1.6rem; font-size: 1.9rem;\">\r\n    1. Что значит «функция возрастает»?\r\n  </h3>\r\n\r\n  <p>\r\n    Функция <em>возрастает</em> на промежутке, если при увеличении аргумента увеличивается и значение функции:\r\n  </p>\r\n\r\n  <p style=\"font-size: 1.4rem; color: #065f46; margin: 1.8rem 0; font-weight: 500;\">\r\n    $$ x_1 < x_2 \\quad \\Rightarrow \\quad f(x_1) < f(x_2) $$\r\n  </p>\r\n\r\n  <p>\r\n    На графике это означает, что кривая идёт «вверх».\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-132-vozrastanie.png\" alt=\"Возрастающая функция\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    Обрати внимание: касательные в этих точках образуют <strong>острые углы</strong> с осью абсцисс.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    2. Что значит «функция убывает»?\r\n  </h3>\r\n\r\n  <p>\r\n    Функция <em>убывает</em> на промежутке, если при увеличении аргумента значение функции уменьшается:\r\n  </p>\r\n\r\n  <p style=\"font-size: 1.4rem; color: #065f46; margin: 1.8rem 0; font-weight: 500;\">\r\n    $$ x_1 < x_2 \\quad \\Rightarrow \\quad f(x_1) > f(x_2) $$\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-133-ubyvanie.png\" alt=\"Убывающая функция\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    Здесь касательные образуют <strong>тупые углы</strong> с осью абсцисс.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    3. Главная связь: знак производной и поведение функции\r\n  </h3>\r\n\r\n  <p>\r\n    Производная показывает, как ведёт себя функция:\r\n  </p>\r\n\r\n  <ul style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 2.5rem; list-style: none; padding-left: 0; line-height: 1.9;\">\r\n    <li>• <strong>f'(x) > 0</strong> — функция возрастает</li>\r\n    <li>• <strong>f'(x) < 0</strong> — функция убывает</li>\r\n    <li>• <strong>f'(x) = 0</strong> — касательная горизонтальна (возможен экстремум)</li>\r\n  </ul>\r\n\r\n  <p>\r\n    Эти факты формализованы в двух теоремах.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    4. Теорема 1 — Признак возрастания функции\r\n  </h3>\r\n\r\n  <p style=\"background: #f0fdf4; padding: 1.6rem; border-radius: 14px; border: 1px solid #dcfce7; text-align: left;\">\r\n    <strong>Если функция имеет положительную производную в каждой точке некоторого промежутка,  \r\n    то она возрастает на этом промежутке.</strong>\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-132-vozrastanie.png\" alt=\"Возрастание и положительная производная\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    5. Теорема 2 — Признак убывания функции\r\n  </h3>\r\n\r\n  <p style=\"background: #fef2f2; padding: 1.6rem; border-radius: 14px; border: 1px solid #fee2e2; text-align: left;\">\r\n    <strong>Если функция имеет отрицательную производную в каждой точке некоторого промежутка,  \r\n    то она убывает на этом промежутке.</strong>\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-133-ubyvanie.png\" alt=\"Убывание и отрицательная производная\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    6. Важное замечание: непрерывность\r\n  </h3>\r\n\r\n  <p>\r\n    Признаки возрастания и убывания работают только для <strong>непрерывных функций</strong>.\r\n  </p>\r\n\r\n  <p>Непрерывная функция — это такая, график которой можно нарисовать, не отрывая карандаш.</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-134-nepreryvnost.png\" alt=\"Непрерывная функция\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>А вот пример функции, которая <strong>не является непрерывной</strong>:</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-135-razryv.png\" alt=\"Разрывная функция\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    На таких графиках признаки возрастания/убывания применять нельзя.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    7. Пример: сравнение значений функции\r\n  </h3>\r\n\r\n  <p>\r\n    <strong>Задача.</strong> Сравнить значения функции  \r\n    <em>f(x) = 9/x</em> в точках <em>x = –2(4/3)</em> и <em>x = –4(3/5)</em>.\r\n  </p>\r\n\r\n  <p>\r\n    Производная:  \r\n    <span style=\"color:#065f46; font-weight:600;\">f'(x) = –9/x² < 0</span> при всех x ≠ 0.\r\n  </p>\r\n\r\n  <p>\r\n    Значит, функция <strong>убывает</strong>.  \r\n    Поэтому большему x соответствует меньшее значение функции.\r\n  </p>\r\n\r\n  <p style=\"font-weight:600; color:#065f46;\">\r\n    Ответ: f(–2(4/3)) < f(–4(3/5)).\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4.5rem 0 1.6rem; font-size: 1.9rem;\">\r\n    Краткие выводы\r\n  </h3>\r\n\r\n  <ul style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 3rem; list-style: none; padding-left: 0; font-size: 1.16rem; line-height: 2;\">\r\n    <li>• Если f'(x) > 0 — функция возрастает.</li>\r\n    <li>• Если f'(x) < 0 — функция убывает.</li>\r\n    <li>• Если f'(x) = 0 — касательная горизонтальна, возможен экстремум.</li>\r\n    <li>• Признаки работают только для непрерывных функций.</li>\r\n    <li>• Знак производной — главный инструмент анализа поведения функции.</li>\r\n  </ul>\r\n\r\n</div>",
+        "video_url": "https://youtu.be/WUvTyaaNkzM",
+        "related_test": null
+    }
+},
+{
+    "model": "education.lecture",
+    "pk": 10,
+    "fields": {
+        "title": "3.3 Промежутки монотонности",
+        "slug": "promezhutki-monotonnosti",
+        "image_url": "https://wiki.loginom.ru/images/function-extr.svg",
+        "content": "<h2 style=\"text-align: center; color: #1a3c34; margin: 0 0 2.5rem 0; font-size: 2.4rem;\">\r\n  Промежутки монотонности функции\r\n</h2>\r\n\r\n<div style=\"max-width: 920px; margin: 0 auto; font-size: 1.13rem; line-height: 1.82; text-align: center; color: #1f2937;\">\r\n\r\n  <p style=\"margin-bottom: 2rem;\">\r\n    Мы уже знаем, что знак производной показывает, возрастает функция или убывает.  \r\n    Теперь научимся находить <strong>промежутки монотонности</strong> — то есть участки, где функция идёт вверх или вниз.  \r\n    Это важнейший шаг в анализе графиков и поиске экстремумов.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 3.2rem 0 1.6rem; font-size: 1.9rem;\">\r\n    1. Что такое монотонность?\r\n  </h3>\r\n\r\n  <p>\r\n    Функция называется <strong>монотонной</strong> на промежутке, если она либо всё время возрастает, либо всё время убывает.\r\n  </p>\r\n\r\n  <ul style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 2.5rem; list-style: none; padding-left: 0; line-height: 1.9;\">\r\n    <li>• <strong>Возрастает</strong>, если при увеличении x увеличивается и f(x)</li>\r\n    <li>• <strong>Убывает</strong>, если при увеличении x значение f(x) уменьшается</li>\r\n  </ul>\r\n\r\n  <p>\r\n    Чтобы определить эти промежутки, используется производная.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    2. Алгоритм нахождения промежутков монотонности\r\n  </h3>\r\n\r\n  <p>\r\n    Для функции <em>y = f(x)</em> выполняем следующие шаги:\r\n  </p>\r\n\r\n  <ol style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 2.5rem; list-style-position: inside; padding-left: 2rem; line-height: 1.9;\">\r\n    <li><strong>Найти область определения</strong> функции D(f).</li>\r\n    <li><strong>Найти производную</strong> f'(x).</li>\r\n    <li><strong>Решить неравенства</strong> f'(x) > 0 и f'(x) < 0.</li>\r\n    <li>Отметить на схеме знаки производной на каждом промежутке.</li>\r\n    <li><strong>Записать ответ</strong>:  \r\n      <ul style=\"list-style: none; padding-left: 1rem;\">\r\n        <li>• f'(x) > 0 → функция возрастает</li>\r\n        <li>• f'(x) < 0 → функция убывает</li>\r\n      </ul>\r\n    </li>\r\n  </ol>\r\n\r\n  <p>\r\n    Для непрерывных функций концы промежутков можно включать в ответ.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    3. Пример 1. Найдите промежутки монотонности функции\r\n  </h3>\r\n\r\n  <p style=\"font-size: 1.3rem; font-weight: 600; color:#065f46;\">\r\n    $$ f(x) = x^3 - 27x $$\r\n  </p>\r\n\r\n  <p><strong>Шаг 1.</strong> Область определения:</p>\r\n  <p>D(f) = ℝ</p>\r\n\r\n  <p><strong>Шаг 2.</strong> Производная:</p>\r\n\r\n  <p style=\"font-size: 1.3rem; color:#065f46; font-weight:600;\">\r\n    $$ f'(x) = 3x^2 - 27 = 3(x - 3)(x + 3) $$\r\n  </p>\r\n\r\n  <p><strong>Шаг 3.</strong> Решаем неравенства:</p>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 2.5rem; list-style:none; padding-left:0; line-height:1.9;\">\r\n    <li>• f'(x) > 0 при x ∈ (−∞; −3) ∪ (3; +∞)</li>\r\n    <li>• f'(x) < 0 при x ∈ (−3; 3)</li>\r\n  </ul>\r\n\r\n  <p><strong>Шаг 4.</strong> Отмечаем знаки производной на схеме.</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-138-extremums-2.png\" alt=\"Схема знаков производной\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p><strong>Шаг 5.</strong> Записываем ответ:</p>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 3rem; list-style:none; padding-left:0; line-height:1.9;\">\r\n    <li>• Функция возрастает на (−∞; −3] и [3; +∞)</li>\r\n    <li>• Функция убывает на [−3; 3]</li>\r\n  </ul>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    4. Пример 2. Найдите промежутки монотонности функции\r\n  </h3>\r\n\r\n  <p style=\"font-size: 1.3rem; font-weight: 600; color:#065f46;\">\r\n    $$ f(x) = 1 + 3x^2 + \\frac{x^3}{3} - \\frac{x^4}{4} $$\r\n  </p>\r\n\r\n  <p><strong>Шаг 1.</strong> D(f) = ℝ</p>\r\n\r\n  <p><strong>Шаг 2.</strong> Производная:</p>\r\n\r\n  <p style=\"font-size: 1.3rem; color:#065f46; font-weight:600;\">\r\n    $$ f'(x) = 6x + x^2 - x^3 = -x(x - 3)(x + 2) $$\r\n  </p>\r\n\r\n  <p><strong>Шаг 3.</strong> Определяем знак производной:</p>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 2.5rem; list-style:none; padding-left:0; line-height:1.9;\">\r\n    <li>• f'(x) > 0 при x ∈ (−∞; −2) ∪ (0; 3)</li>\r\n    <li>• f'(x) < 0 при x ∈ (−2; 0) ∪ (3; +∞)</li>\r\n  </ul>\r\n\r\n  <p><strong>Шаг 4.</strong> Схема знаков производной:</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-139-max.png\" alt=\"Схема монотонности\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p><strong>Шаг 5.</strong> Ответ:</p>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 3rem; list-style:none; padding-left:0; font-size:1.16rem; line-height:2;\">\r\n    <li>• Функция возрастает на (−∞; −2] и [0; 3]</li>\r\n    <li>• Функция убывает на [−2; 0] и [3; +∞)</li>\r\n  </ul>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4.5rem 0 1.6rem; font-size: 1.9rem;\">\r\n    Краткие выводы\r\n  </h3>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 3rem; list-style:none; padding-left:0; font-size:1.16rem; line-height:2;\">\r\n    <li>• Чтобы найти промежутки монотонности, нужно исследовать знак производной.</li>\r\n    <li>• Производная > 0 → функция возрастает.</li>\r\n    <li>• Производная < 0 → функция убывает.</li>\r\n    <li>• Точки, где f'(x) = 0 или не существует, делят ось на промежутки.</li>\r\n    <li>• На каждом промежутке знак производной постоянен.</li>\r\n  </ul>\r\n\r\n</div>",
+        "video_url": "https://youtu.be/WUvTyaaNkzM",
+        "related_test": null
+    }
+},
+{
+    "model": "education.lecture",
+    "pk": 11,
+    "fields": {
+        "title": "3.4 Экстремумы и критические точки",
+        "slug": "ekstremumy-i-kriticheskie-tochki",
+        "image_url": "https://fsd.videouroki.net/html/2020/04/08/v_5e8dfc91e254e/img7.jpg",
+        "content": "<h2 style=\"text-align: center; color: #1a3c34; margin: 0 0 2.5rem 0; font-size: 2.4rem;\">\r\n  Экстремумы функции и критические точки\r\n</h2>\r\n\r\n<div style=\"max-width: 920px; margin: 0 auto; font-size: 1.13rem; line-height: 1.82; text-align: center; color: #1f2937;\">\r\n\r\n  <p style=\"margin-bottom: 2rem;\">\r\n    Мы научились находить промежутки возрастания и убывания функции.  \r\n    Теперь разберёмся, как определить <strong>точки максимума</strong> и <strong>точки минимума</strong> — вместе они называются <strong>экстремумами</strong>.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 3.2rem 0 1.6rem; font-size: 1.9rem;\">\r\n    1. Что такое экстремум?\r\n  </h3>\r\n\r\n  <p>\r\n    Экстремум — это точка, в которой функция достигает <strong>наибольшего</strong> или <strong>наименьшего</strong> значения на некотором промежутке.\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 620px;\">\r\n    <img src=\"/images/ris-136-extremums.png\" alt=\"Экстремумы функции\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    На рисунке видно: точки x₁, x₃, x₅, x₇ — это <strong>минимумы</strong>,  \r\n    а x₂, x₄, x₆ — <strong>максимумы</strong>.\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-137-min-max.png\" alt=\"Минимум и максимум функции\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    Значения функции в этих точках называются <strong>f_min</strong> и <strong>f_max</strong>.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    2. Как связаны экстремумы и производная?\r\n  </h3>\r\n\r\n  <p>\r\n    В точках экстремума касательная к графику функции <strong>горизонтальна</strong>,  \r\n    то есть производная равна нулю:\r\n  </p>\r\n\r\n  <p style=\"font-size: 1.4rem; color:#065f46; margin: 1.8rem 0; font-weight: 500;\">\r\n    $$ f'(x_0) = 0 $$\r\n  </p>\r\n\r\n  <p>\r\n    Но! Это условие <strong>не является достаточным</strong>.  \r\n    Производная может быть равна нулю, но экстремума нет.\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-141-kasatelnaya-sluchai.png\" alt=\"Случаи горизонтальной касательной\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    На рисунке 141, в видно: касательная горизонтальна, но экстремума нет — это <strong>точка перегиба</strong>.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    3. Когда производная не существует\r\n  </h3>\r\n\r\n  <p>\r\n    Бывает, что касательная не существует — например, в точках излома или острого угла.\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-142-kasatelnaya-net.png\" alt=\"Касательная не существует\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p>\r\n    В таких точках производной нет, но экстремум может быть (рис. 142, a и b).\r\n  </p>\r\n\r\n  <p>\r\n    Такие точки тоже нужно учитывать — они называются <strong>критическими</strong>.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    4. Критические точки\r\n  </h3>\r\n\r\n  <p>\r\n    <strong>Критические точки</strong> — это внутренние точки области определения функции, в которых:\r\n  </p>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 2.5rem; list-style:none; padding-left:0; line-height:1.9;\">\r\n    <li>• f'(x) = 0</li>\r\n    <li>• или f'(x) не существует</li>\r\n  </ul>\r\n\r\n  <p>\r\n    Именно среди критических точек находятся экстремумы.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    5. Признак максимума (Теорема 3)\r\n  </h3>\r\n\r\n  <p style=\"background: #fef2f2; padding: 1.6rem; border-radius: 14px; border: 1px solid #fee2e2; text-align: left;\">\r\n    <strong>Если функция непрерывна в точке x₀,  \r\n    и производная меняет знак с «плюс» на «минус» при переходе через x₀,  \r\n    то x₀ — точка максимума функции.</strong>\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-139-max.png\" alt=\"Признак максимума\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    6. Признак минимума (Теорема 4)\r\n  </h3>\r\n\r\n  <p style=\"background: #f0fdf4; padding: 1.6rem; border-radius: 14px; border: 1px solid #dcfce7; text-align: left;\">\r\n    <strong>Если функция непрерывна в точке x₀,  \r\n    и производная меняет знак с «минус» на «плюс» при переходе через x₀,  \r\n    то x₀ — точка минимума функции.</strong>\r\n  </p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-140-min.png\" alt=\"Признак минимума\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    7. Алгоритм нахождения экстремумов\r\n  </h3>\r\n\r\n  <ol style=\"text-align:left; max-width:720px; margin:1.6rem auto 2.5rem; list-style-position:inside; padding-left:2rem; line-height:1.9;\">\r\n    <li>Найти область определения функции D(f).</li>\r\n    <li>Найти производную f'(x).</li>\r\n    <li>Найти точки, где f'(x) = 0 или не существует.</li>\r\n    <li>Определить знак производной на промежутках между этими точками.</li>\r\n    <li>Если производная меняет знак — точка является экстремумом.</li>\r\n  </ol>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    8. Пример: найти экстремумы функции\r\n  </h3>\r\n\r\n  <p style=\"font-size: 1.3rem; font-weight: 600; color:#065f46;\">\r\n    $$ f(x) = 3x^2 - 2x^3 - 1,\\quad x \\in (-\\infty; 1) \\cup (1; +\\infty) $$\r\n  </p>\r\n\r\n  <p><strong>1)</strong> D(f) = (−∞; 1) ∪ (1; +∞)</p>\r\n\r\n  <p><strong>2)</strong> Производная:</p>\r\n\r\n  <p style=\"font-size: 1.3rem; color:#065f46; font-weight:600;\">\r\n    $$ f'(x) = 6x - 6x^2 = 6x(1 - x) $$\r\n  </p>\r\n\r\n  <p><strong>3)</strong> Критические точки:</p>\r\n\r\n  <p>x = 0, x = 1</p>\r\n\r\n  <p><strong>4)</strong> Знаки производной:</p>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 2.5rem; list-style:none; padding-left:0; line-height:1.9;\">\r\n    <li>• x < 0 → f'(x) < 0</li>\r\n    <li>• 0 < x < 1 → f'(x) > 0</li>\r\n    <li>• x > 1 → f'(x) < 0</li>\r\n  </ul>\r\n\r\n  <p><strong>5)</strong> Производная меняет знак:</p>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 2.5rem; list-style:none; padding-left:0; line-height:1.9;\">\r\n    <li>• в x = 0: «минус → плюс» → минимум</li>\r\n    <li>• в x = 1: «плюс → минус» → максимум</li>\r\n  </ul>\r\n\r\n  <p><strong>6)</strong> Значения функции:</p>\r\n\r\n  <p>f(0) = −1, f(1) = 0</p>\r\n\r\n  <p style=\"font-weight:600; color:#065f46;\">\r\n    Ответ: x_min = 0, f_min = −1; x_max = 1, f_max = 0.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4.5rem 0 1.6rem; font-size: 1.9rem;\">\r\n    Краткие выводы\r\n  </h3>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 3rem; list-style:none; padding-left:0; font-size:1.16rem; line-height:2;\">\r\n    <li>• Экстремумы находятся только среди критических точек.</li>\r\n    <li>• f'(x₀) = 0 — необходимое, но не достаточное условие экстремума.</li>\r\n    <li>• Производная должна менять знак.</li>\r\n    <li>• «Плюс → минус» — максимум.</li>\r\n    <li>• «Минус → плюс» — минимум.</li>\r\n    <li>• Если производная не существует, экстремум тоже возможен.</li>\r\n  </ul>\r\n\r\n</div>",
+        "video_url": "https://youtu.be/WUvTyaaNkzM",
+        "related_test": null
+    }
+},
+{
+    "model": "education.lecture",
+    "pk": 12,
+    "fields": {
+        "title": "4. Применение производной к исследованию функций",
+        "slug": "4-primenenie-proizvodnoj-k-issledovaniyu-funkcij",
+        "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHCP-0ltXhyphenhyphenjyZ46LTaudWhCw3TO8dSMCGS-YwvFXSNlTkfgjk4yke_7P1UCMlgzduFa789DFfjWvp_JESnxdDuFe9unlKLiX5TZlTivO3v_iBReCaRTnxn_-G6NIZ_ofnboBgfW_AHws/s1600/Scan10001.JPG",
+        "content": "<h2 style=\"text-align: center; color: #1a3c34; margin: 0 0 2.5rem 0; font-size: 2.4rem;\">\r\n  Применение производной к исследованию функций\r\n</h2>\r\n\r\n<div style=\"max-width: 920px; margin: 0 auto; font-size: 1.13rem; line-height: 1.82; text-align: center; color: #1f2937;\">\r\n\r\n  <p style=\"margin-bottom: 2rem;\">\r\n    Производная — это мощный инструмент, который позволяет полностью исследовать поведение функции:  \r\n    найти её нули, промежутки возрастания и убывания, точки экстремума, а затем построить график.  \r\n    В этой лекции мы разберём <strong>полный алгоритм исследования функции</strong> и применим его на примерах.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 3.2rem 0 1.6rem; font-size: 1.9rem;\">\r\n    1. Алгоритм исследования функции с помощью производной\r\n  </h3>\r\n\r\n  <p>\r\n    Чтобы исследовать функцию и построить её график, выполняем следующие шаги:\r\n  </p>\r\n\r\n  <ol style=\"text-align: left; max-width: 720px; margin: 1.6rem auto 2.5rem; list-style-position: inside; padding-left: 2rem; line-height: 1.9;\">\r\n    <li><strong>Найти область определения функции</strong> D(f).</li>\r\n    <li><strong>Исследовать функцию на чётность</strong> (проверить, является ли она чётной или нечётной).</li>\r\n    <li><strong>Найти нули функции</strong>, решив уравнение f(x) = 0.</li>\r\n    <li><strong>Найти точку пересечения с осью ординат</strong> — вычислить f(0).</li>\r\n    <li><strong>Найти производную</strong> f'(x) и определить:\r\n      <ul style=\"list-style: none; padding-left: 1rem;\">\r\n        <li>• промежутки возрастания и убывания;</li>\r\n        <li>• точки экстремума;</li>\r\n        <li>• значения экстремумов.</li>\r\n      </ul>\r\n    </li>\r\n    <li><strong>Построить график</strong>, используя все полученные результаты.</li>\r\n  </ol>\r\n\r\n  <p>\r\n    Теперь применим этот алгоритм на примерах.\r\n  </p>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    2. Пример 1. Исследовать функцию и построить график\r\n  </h3>\r\n\r\n  <p style=\"font-size: 1.3rem; font-weight: 600; color:#065f46;\">\r\n    $$ f(x) = x^3 + 4x^2 + 4x $$\r\n  </p>\r\n\r\n  <p><strong>Шаг 1.</strong> Область определения:</p>\r\n  <p>D(f) = ℝ</p>\r\n\r\n  <p><strong>Шаг 2.</strong> Проверим чётность:</p>\r\n\r\n  <p>\r\n    f(–x) = –x³ + 4x² – 4x  \r\n    ≠ f(x), ≠ –f(x)\r\n  </p>\r\n\r\n  <p>Функция не является ни чётной, ни нечётной.</p>\r\n\r\n  <p><strong>Шаг 3.</strong> Найдём нули функции:</p>\r\n\r\n  <p style=\"font-size: 1.3rem; color:#065f46; font-weight:600;\">\r\n    $$ x(x + 2)^2 = 0 $$\r\n  </p>\r\n\r\n  <p>Корни: x = 0, x = –2.</p>\r\n\r\n  <p><strong>Шаг 4.</strong> Точка пересечения с осью OY:</p>\r\n\r\n  <p>f(0) = 0</p>\r\n\r\n  <p><strong>Шаг 5.</strong> Найдём производную:</p>\r\n\r\n  <p style=\"font-size: 1.3rem; color:#065f46; font-weight:600;\">\r\n    $$ f'(x) = 3x^2 + 8x + 4 = 3(x + 2)\\left(x + \\frac{2}{3}\\right) $$\r\n  </p>\r\n\r\n  <p>Критические точки: x = –2, x = –2/3.</p>\r\n\r\n  <p><strong>Знаки производной:</strong></p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-153a-graph-points.png\" alt=\"Схема знаков производной\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p><strong>Выводы:</strong></p>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 2.5rem; list-style:none; padding-left:0; line-height:1.9;\">\r\n    <li>• x = –2: производная меняет знак «+ → –» → максимум</li>\r\n    <li>• x = –2/3: производная меняет знак «– → +» → минимум</li>\r\n  </ul>\r\n\r\n  <p><strong>Значения функции:</strong></p>\r\n\r\n  <p>f(–2) = 0 → максимум</p>\r\n  <p>f(–2/3) = –5/27 → минимум</p>\r\n\r\n  <h4 style=\"color: #2f855a; margin: 3rem 0 1.4rem; font-size: 1.6rem;\">\r\n    Построение графика\r\n  </h4>\r\n\r\n  <p><strong>1)</strong> Отмечаем точки пересечения с осями:</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-153a-graph-points.png\" alt=\"Точки пересечения\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p><strong>2)</strong> Отмечаем экстремумы:</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-153b-extremums.png\" alt=\"Экстремумы функции\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p><strong>3)</strong> Достраиваем график по промежуткам монотонности:</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-153c-final-graph.png\" alt=\"Готовый график функции\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4rem 0 1.6rem; font-size: 1.9rem;\">\r\n    3. Пример 2. Исследовать функцию и построить график\r\n  </h3>\r\n\r\n  <p style=\"font-size: 1.3rem; font-weight: 600; color:#065f46;\">\r\n    $$ f(x) = 0.75x^4 - x^3 - 3x^2 $$\r\n  </p>\r\n\r\n  <p><strong>Шаг 1.</strong> D(f) = ℝ</p>\r\n\r\n  <p><strong>Шаг 2.</strong> Проверка чётности:</p>\r\n\r\n  <p>f(–x) ≠ f(x), f(–x) ≠ –f(x) → функция не чётная и не нечётная.</p>\r\n\r\n  <p><strong>Шаг 3.</strong> Нули функции:</p>\r\n\r\n  <p style=\"font-size: 1.3rem; color:#065f46; font-weight:600;\">\r\n    $$ x^2(3x^2 - 4x - 12) = 0 $$\r\n  </p>\r\n\r\n  <p>Корни: x = 0, x ≈ –1.4, x ≈ 2.8</p>\r\n\r\n  <p><strong>Шаг 4.</strong> f(0) = 0</p>\r\n\r\n  <p><strong>Шаг 5.</strong> Производная:</p>\r\n\r\n  <p style=\"font-size: 1.3rem; color:#065f46; font-weight:600;\">\r\n    $$ f'(x) = 3x(x - 2)(x + 1) $$\r\n  </p>\r\n\r\n  <p><strong>Знаки производной:</strong></p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-154a-points.png\" alt=\"Схема знаков производной\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p><strong>Экстремумы:</strong></p>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 2.5rem; list-style:none; padding-left:0; line-height:1.9;\">\r\n    <li>• x = –1 → минимум, f(–1) = –1.25</li>\r\n    <li>• x = 0 → максимум, f(0) = 0</li>\r\n    <li>• x = 2 → минимум, f(2) = –8</li>\r\n  </ul>\r\n\r\n  <h4 style=\"color: #2f855a; margin: 3rem 0 1.4rem; font-size: 1.6rem;\">\r\n    Построение графика\r\n  </h4>\r\n\r\n  <p><strong>1)</strong> Отмечаем точки пересечения:</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-154a-points.png\" alt=\"Точки пересечения\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p><strong>2)</strong> Отмечаем экстремумы:</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-154b-extremums.png\" alt=\"Экстремумы функции\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <p><strong>3)</strong> Достраиваем график:</p>\r\n\r\n  <div style=\"margin: 2.8rem auto; max-width: 520px;\">\r\n    <img src=\"/images/ris-154c-final-graph.png\" alt=\"Готовый график функции\"\r\n         style=\"width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.1);\">\r\n  </div>\r\n\r\n  <h3 style=\"color: #2f855a; margin: 4.5rem 0 1.6rem; font-size: 1.9rem;\">\r\n    Краткие выводы\r\n  </h3>\r\n\r\n  <ul style=\"text-align:left; max-width:720px; margin:1.6rem auto 3rem; list-style:none; padding-left:0; font-size:1.16rem; line-height:2;\">\r\n    <li>• Производная позволяет полностью исследовать функцию.</li>\r\n    <li>• Алгоритм исследования включает 6 шагов: D(f), чётность, нули, пересечения, монотонность, график.</li>\r\n    <li>• Экстремумы находятся через знак производной.</li>\r\n    <li>• График строится по ключевым точкам и промежуткам монотонности.</li>\r\n  </ul>\r\n\r\n</div>",
+        "video_url": null,
+        "related_test": null
+    }
+}
+]
