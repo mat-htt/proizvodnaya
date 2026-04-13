@@ -12,7 +12,6 @@ const Register = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Загружаем список групп при монтировании компонента
     api.get('/groups/')
       .then(res => setGroups(res.data))
       .catch((err) => {
@@ -22,29 +21,41 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
+    // Убираем лишние пробелы в начале и конце
+    const cleanUsername = username.trim();
+
     try {
       await api.post('/register/', {
-        username,
+        username: cleanUsername,
         password,
-        // Передаем только логин, пароль и ID группы
         group_id: groupId || null
       });
       alert('Регистрация прошла успешно! Теперь войдите.');
       navigate('/login');
     } catch (err) {
       console.error(err);
-      alert('Ошибка регистрации. Проверьте данные (возможно, логин занят)');
+      // Выводим конкретную причину ошибки от сервера
+      const serverErrors = err.response?.data;
+      if (serverErrors) {
+        const errorMsg = Object.entries(serverErrors)
+          .map(([field, msgs]) => `${field}: ${msgs.join(' ')}`)
+          .join('\n');
+        alert(`Ошибка регистрации:\n${errorMsg}`);
+      } else {
+        alert('Ошибка регистрации. Проверьте данные (возможно, логин занят)');
+      }
     }
   };
 
   return (
-    <div className="auth-page-wrapper"> {/* Центрирующий контейнер */}
+    <div className="auth-page-wrapper">
       <div className="auth-container">
         <h2>Регистрация</h2>
         <form onSubmit={handleRegister} className="auth-form">
           <input
             type="text"
-            placeholder="Логин (ваш ник)"
+            placeholder="Логин (только латиница, цифры и _ - .)"
             value={username}
             onChange={e => setUsername(e.target.value)}
             required
@@ -60,7 +71,6 @@ const Register = () => {
             autoComplete="new-password"
           />
 
-          {/* Улучшенный выпадающий список выбора группы */}
           <select
             value={groupId}
             onChange={e => setGroupId(e.target.value)}

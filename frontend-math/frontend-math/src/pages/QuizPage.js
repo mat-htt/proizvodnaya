@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import api from '../api';  // ← используем наш api с токеном
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import api from '../api';
 import '../css/Main.css';
 import '../css/QuizPage.css';
 
@@ -9,11 +9,12 @@ const QuizPage = () => {
   const navigate = useNavigate();
 
   const [test, setTest] = useState(null);
-  const [answers, setAnswers] = useState({});     // { question_id: { choiceId: number } или { text: string } }
+  const [answers, setAnswers] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [result, setResult] = useState(null);     // после отправки: { score, correct_count, total }
+  const [result, setResult] = useState(null);
 
+  // Загрузка данных теста
   useEffect(() => {
     const fetchTest = async () => {
       try {
@@ -28,6 +29,25 @@ const QuizPage = () => {
     };
     fetchTest();
   }, [id]);
+
+  // ЭФФЕКТ ДЛЯ КОРРЕКТНОГО ОТОБРАЖЕНИЯ ФОРМУЛ (KaTeX)
+  // ЭФФЕКТ ДЛЯ КОРРЕКТНОГО ОТОБРАЖЕНИЯ ФОРМУЛ (KaTeX)
+  useEffect(() => {
+    // Используем window.renderMathInElement, чтобы ESLint не ругался на неопределенную переменную
+    const renderMath = window.renderMathInElement;
+
+    if (!loading && renderMath) {
+      renderMath(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ],
+        throwOnError: false,
+      });
+    }
+  }, [loading, test, result]);
 
   const handleChoiceChange = (questionId, choiceId) => {
     setAnswers(prev => ({
@@ -82,10 +102,10 @@ const QuizPage = () => {
       <div className="questions-list">
         {test.questions.map(question => (
           <div key={question.id} className="question-card">
-            <p className="question-text">
+            <div className="question-text">
               <strong>{question.text}</strong>
               {question.q_type === 'TEXT' && <span className="text-hint"> (открытый ответ)</span>}
-            </p>
+            </div>
 
             {question.q_type === 'CHOICE' ? (
               <div className="choices">
@@ -97,7 +117,7 @@ const QuizPage = () => {
                       onChange={() => handleChoiceChange(question.id, choice.id)}
                       checked={answers[question.id]?.choiceId === choice.id}
                     />
-                    {choice.text}
+                    <span className="choice-text-content">{choice.text}</span>
                   </label>
                 ))}
               </div>
