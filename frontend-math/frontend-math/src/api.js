@@ -1,8 +1,12 @@
 // src/api.js
 import axios from 'axios';
 
+// По умолчанию бэкенд ищем на том же компьютере, что и сайт: так сайт работает
+// и с localhost, и с телефонов по IP в локальной сети (режим конференции)
+export const API_URL = process.env.REACT_APP_API_URL || `http://${window.location.hostname}:8000/api`;
+
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api',
+  baseURL: API_URL,
 });
 
 // Автоматически добавляем токен
@@ -24,14 +28,15 @@ api.interceptors.response.use(
 
       if (refreshToken) {
         try {
-          const res = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+          const res = await axios.post(`${API_URL}/token/refresh/`, {
             refresh: refreshToken,
           });
           localStorage.setItem('access_token', res.data.access);
           originalRequest.headers.Authorization = `Bearer ${res.data.access}`;
           return api(originalRequest);
         } catch (err) {
-          localStorage.clear();
+          localStorage.removeItem('access_token');
+          localStorage.removeItem('refresh_token');
           window.location.href = '/login';
         }
       }

@@ -1,125 +1,147 @@
-:root {
-  --deep-green: #1b4332;
-  --main-green: #2d6a4f;
-  --soft-green: #40916c;
-  --mint: #d8f3dc;
-  --white: #ffffff;
-}
+.hub { padding-top: 24px; padding-bottom: 96px; }
 
-.hub-page {
-  position: relative;
-  min-height: 100vh;
-  background-color: #f0f7f4; /* Светлый фон для контраста */
-  overflow: hidden;
-  padding-top: 40px;
-}
-
-/* Приколюхи на фоне: абстрактные пятна */
-.bg-decor {
-  position: absolute;
-  filter: blur(80px);
-  z-index: 0;
-  border-radius: 50%;
-  opacity: 0.4;
-}
-
-.blob-1 {
-  width: 400px;
-  height: 400px;
-  background: var(--soft-green);
-  top: -100px;
-  right: -100px;
-}
-
-.blob-2 {
-  width: 300px;
-  height: 300px;
-  background: var(--mint);
-  bottom: -50px;
-  left: -50px;
-}
-
-/* Математическая сетка на фоне */
-.math-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: radial-gradient(var(--main-green) 0.5px, transparent 0.5px);
-  background-size: 30px 30px; /* Эффект тетрадного листа в точку */
-  opacity: 0.1;
-  z-index: 0;
-}
-
-.hub-container {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.hub-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.hub-title {
-  font-size: 2.5rem;
-  color: var(--deep-green);
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.hub-subtitle {
-  color: var(--soft-green);
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.hub-grid {
+/* ---------- Баннер ---------- */
+.hero {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  padding-bottom: 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  padding: 56px;
+  border-radius: var(--r-xl);
+  background: var(--block-dark);
+  color: #fff;
 }
 
-/* Стили для TopicCard (нужно применить в компоненте TopicCard.css) */
+.hero__title {
+  color: #fff;
+  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.hero__lead { margin-top: 20px; font-size: 1.2rem; color: rgba(255, 255, 255, 0.75); max-width: 460px; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
+
+/* График касательной прямо на баннере */
+.tangent-card__svg { width: 100%; height: auto; display: block; touch-action: pan-y; cursor: crosshair; }
+.tg-grid { stroke: rgba(255, 255, 255, 0.07); stroke-width: 1; }
+.tg-axis { stroke: rgba(255, 255, 255, 0.25); stroke-width: 1.5; }
+.tg-guide { stroke: rgba(255, 255, 255, 0.35); stroke-width: 1; stroke-dasharray: 3 4; }
+.tg-curve { fill: none; stroke: #fff; stroke-width: 3.5; stroke-linecap: round; }
+.tg-ext { fill: var(--block-dark); stroke: #fff; stroke-width: 2; }
+.tg-tangent { stroke-width: 3; stroke-linecap: round; }
+.tg-tangent.is-up, .tg-point.is-up { stroke: var(--mint-2); fill: var(--mint-2); }
+.tg-tangent.is-down, .tg-point.is-down { stroke: #f4a896; fill: #f4a896; }
+.tg-halo { opacity: 0.2; }
+.tg-halo.is-up { fill: var(--mint-2); }
+.tg-halo.is-down { fill: #f4a896; }
+
+.tangent-card__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+.tangent-card__stats div { padding: 12px 16px; border-radius: 16px; background: rgba(255, 255, 255, 0.08); }
+.tangent-card__stats span { display: block; font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); }
+.tangent-card__stats strong { font-size: 1.15rem; color: #fff; font-variant-numeric: tabular-nums; }
+.tangent-card__stats strong.is-up { color: var(--mint-2); }
+.tangent-card__stats strong.is-down { color: #f4a896; }
+
+/* ---------- Как устроен курс ---------- */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0 72px; }
+.step { padding: 28px; border-radius: var(--r-l); background: var(--surface); }
+.step__num {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--mint);
+  color: var(--brand-deep);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+:root[data-theme='dark'] .step__num { background: var(--block-mint); color: var(--mint); }
+.step h3 { font-size: 1.35rem; margin-bottom: 8px; }
+.step p { color: var(--muted); }
+
+/* ---------- Программа ---------- */
+.program { margin-bottom: 72px; }
+.program .section-title { margin-bottom: 24px; }
+.program__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.program__skeleton { height: 320px; }
+
 .topic-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 24px 0;
+  border-radius: var(--r-l);
+  background: var(--surface);
+  color: inherit;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s;
+}
+.topic-card:hover { background: var(--surface-2); }
+.topic-card__top { display: flex; align-items: center; justify-content: space-between; min-height: 30px; }
+.topic-card__num { font-size: 1rem; font-weight: 700; color: var(--brand-soft); }
+.topic-card h3 { font-size: 1.4rem; font-weight: 700; line-height: 1.2; }
+
+.topic-card__media {
+  margin-top: auto;
+  height: 168px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.topic-card__media img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.3s; }
+.topic-card:hover .topic-card__media img { transform: scale(1.03); }
+.topic-card__placeholder {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--brand-soft);
+  background: var(--mint);
 }
 
-.topic-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(45, 106, 79, 0.2);
-  border-color: var(--main-green);
+/* ---------- Контрольная ---------- */
+.exam {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 56px;
+  border-radius: var(--r-xl);
+  background: var(--block-mint);
+  color: var(--on-mint);
+}
+.exam h2 { color: var(--on-mint); font-size: clamp(2rem, 3.6vw, 3rem); font-weight: 800; letter-spacing: -0.03em; }
+.exam p { margin: 16px 0 28px; font-size: 1.15rem; max-width: 520px; }
+.exam .exam__note { margin: 16px 0 0; font-size: 0.97rem; }
+.exam__note a { color: inherit; text-decoration: underline; }
+
+.exam__facts { display: grid; gap: 10px; margin: 0; }
+.exam__facts div {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 18px 24px;
+  border-radius: 20px;
+  background: var(--surface);
+}
+.exam__facts dt { font-size: 2.4rem; font-weight: 800; color: var(--brand); letter-spacing: -0.03em; line-height: 1; min-width: 92px; }
+.exam__facts dd { margin: 0; color: var(--text); font-size: 1.06rem; }
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 1000px) {
+  .hero, .exam { grid-template-columns: 1fr; padding: 36px 28px; }
+  .program__grid { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr; }
 }
 
-
-.function-waves {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    repeat-x url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C150,110 350,10 500,60 C650,110 850,10 1000,60 L1000,120 L0,120 Z' fill='%232d6a4f' fill-opacity='0.03'/%3E%3C/svg%3E");
-  background-size: 100% 120px;
-  z-index: 0;
-  pointer-events: none;
-}
-
-@keyframes float {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(30px, -50px); }
-  100% { transform: translate(0, 0); }
-}
-
-.blob-1, .blob-2 {
-  animation: float 15s infinite ease-in-out; /* Плавное движение «изменения» */
+@media (max-width: 600px) {
+  .hub { padding-top: 12px; }
+  .hero, .exam { padding: 28px 20px; border-radius: var(--r-l); }
+  .hero__cta .btn, .exam .btn { width: 100%; }
+  .program__grid { grid-template-columns: 1fr; }
+  .tangent-card__stats div { padding: 10px 12px; }
 }

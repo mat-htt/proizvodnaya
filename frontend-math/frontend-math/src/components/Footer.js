@@ -1,46 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 import '../css/Footer.css';
 
 const Footer = () => (
   <footer className="footer">
-    <div className="footer-content">
-      {/* Блок с логотипом и описанием */}
-      <div className="footer-brand">
-        <div className="footer-title">
-          <span style={{color: '#b7e4c7'}}>∑</span> MathBase
+    <div className="container">
+      <div className="footer__grid">
+        <div className="footer__brand">
+          <Logo />
+          <p>Курс по производной: лекции, задачи и контрольная работа.</p>
         </div>
-        <p>
-          Интерактивная платформа для глубокого изучения производных и математического анализа.
-          Делаем сложные темы доступными для каждого студента.
-        </p>
+
+        <nav className="footer__col" aria-label="Обучение">
+          <h4>Обучение</h4>
+          <Link to="/">Программа курса</Link>
+          <Link to="/tests">Тесты и контрольная</Link>
+          <Link to="/resources">Материалы</Link>
+        </nav>
+
+        <nav className="footer__col" aria-label="Поддержка">
+          <h4>Поддержка</h4>
+          <Link to="/contact">Связаться с нами</Link>
+          <Link to="/privacy">Конфиденциальность</Link>
+          <Link to="/terms">Условия использования</Link>
+        </nav>
       </div>
 
-      {/* Навигация */}
-      <div className="footer-section">
-        <h4 className="footer-section-title">Обучение</h4>
-        <div className="footer-links">
-          <Link to="/" className="footer-link">Все темы</Link>
-          <Link to="/teacher" className="footer-link">Для учителей</Link>
-          <Link to="/resources" className="footer-link">Материалы</Link>
-        </div>
-      </div>
-
-      {/* Поддержка и правовая информация */}
-      <div className="footer-section">
-        <h4 className="footer-section-title">Поддержка</h4>
-        <div className="footer-links">
-          <Link to="/contact" className="footer-link">Связаться с нами</Link>
-          <Link to="/privacy" className="footer-link">Конфиденциальность</Link>
-          <Link to="/terms" className="footer-link">Условия использования</Link>
-        </div>
-      </div>
-    </div>
-
-    <div className="footer-bottom">
-      <p className="footer-copyright">
-        © {new Date().getFullYear()} MathBase. Все права защищены. Разработано для курса «Производная».
-      </p>
+      <div className="footer__bottom">© {new Date().getFullYear()} MathBase</div>
     </div>
   </footer>
 );

@@ -40,21 +40,69 @@ class RegisterSerializer(serializers.ModelSerializer):
 class ChoiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Choice
-        fields = ['id', 'text', 'is_correct']
+        fields = ['id', 'question', 'text', 'is_correct']
+
 
 class QuestionSerializer(serializers.ModelSerializer):
-    choices = ChoiceSerializer(many=True, read_only=True) # Подтягиваем варианты ответов сразу
+    choices = ChoiceSerializer(many=True, read_only=True)
 
     class Meta:
         model = Question
-        fields = ['id', 'text', 'q_type', 'choices']
+        fields = ['id', 'test', 'text', 'q_type', 'correct_text_answer', 'choices']
+
+
+def _is_teacher(context):
+    request = context.get('request')
+    return bool(request and request.user and request.user.is_staff)
+
 
 class TestSerializer(serializers.ModelSerializer):
-    questions = QuestionSerializer(many=True, read_only=True)
+    questions = serializers.SerializerMethodField()
+    question_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Test
-        fields = ['id', 'title', 'description', 'questions']
+        fields = ['id', 'title', 'description', 'series', 'variant', 'created_at', 'question_count', 'questions']
+
+    def get_question_count(self, obj):
+        return obj.questions.count()
+
+    def get_questions(self, obj):
+        # Ученик не должен видеть правильные ответы — отдаём их только учителю
+        teacher = _is_teacher(self.context)
+        result = []
+        for q in obj.questions.all().order_by('id'):
+            item = {
+                'id': q.id,
+                'text': q.text,
+                'q_type': q.q_type,
+                'choices': [
+                    {'id': c.id, 'text': c.text, **({'is_correct': c.is_correct} if teacher else {})}
+                    for c in q.choices.all().order_by('id')
+                ],
+            }
+            if teacher:
+                item['correct_text_answer'] = q.correct_text_answer or ''
+            result.append(item)
+        return result
+
+
+class TestListSerializer(serializers.ModelSerializer):
+    """Облегчённый вариант для каталога тестов — без вопросов."""
+    question_count = serializers.SerializerMethodField()
+    lecture = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Test
+        fields = ['id', 'title', 'description', 'series', 'variant', 'created_at', 'question_count', 'lecture']
+
+    def get_question_count(self, obj):
+        return obj.questions.count()
+
+    def get_lecture(self, obj):
+        lecture = obj.lectures.first()
+        return {'title': lecture.title, 'slug': lecture.slug} if lecture else None
+
 
 class AnswerItemSerializer(serializers.Serializer):
     question_id = serializers.IntegerField()
@@ -82,18 +130,4 @@ class TestSubmissionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TestSubmission
-        fields = ['id', 'student_name', 'group_name', 'test_title', 'score', 'submitted_at']
-
-
-class ChoiceSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Choice
-        fields = ['id', 'question', 'text', 'is_correct']
-
-
-class QuestionSerializer(serializers.ModelSerializer):
-    choices = ChoiceSerializer(many=True, read_only=True)
-
-    class Meta:
-        model = Question
-        fields = ['id', 'test', 'text', 'q_type', 'choices']
+        fields = ['id', 'student_name', 'group_name', 'test', 'test_title', 'score', 'submitted_at']

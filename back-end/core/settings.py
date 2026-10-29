@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-tn*0%vp4^qis2kf^@0%qop0g!6(%m%@w6^beg0!a6$$8!o6rb4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# В режиме разработки пускаем запросы с любых адресов: телефоны участников
+# конференции открывают сайт по IP компьютера в локальной сети
+ALLOWED_HOSTS = ['*'] if DEBUG else []
 
 
 # Application definition

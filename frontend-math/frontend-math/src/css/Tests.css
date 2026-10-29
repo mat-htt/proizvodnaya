@@ -1,0 +1,75 @@
+/* ---------- Каталог тестов ---------- */
+.tests-gate { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.tests-gate h3 { font-size: 1.5rem; }
+.tests-gate p { color: var(--muted); margin-top: 6px; }
+.tests-gate > div:first-child { flex: 1; min-width: 260px; }
+.tests-gate__actions { display: flex; gap: 8px; }
+
+.series {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 48px;
+  margin-bottom: 56px;
+  border-radius: var(--r-xl);
+  background: var(--surface);
+}
+.series__info h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; }
+.series__info p { color: var(--muted); margin-top: 14px; font-size: 1.06rem; }
+.series__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 28px;
+}
+.series__facts li { padding: 8px 14px; border-radius: 12px; background: var(--surface-2); font-size: 0.97rem; }
+.series__facts strong { color: var(--ink); }
+
+.series__variants { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.variant {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 22px 24px;
+  border-radius: var(--r-m);
+  background: var(--mint);
+  color: var(--brand-deep);
+  transition: background-color 0.15s;
+}
+:root[data-theme='dark'] .variant { background: var(--block-mint); color: var(--mint); }
+.variant:hover { background: var(--mint-2); }
+:root[data-theme='dark'] .variant:hover { background: #2a5440; }
+.variant__label { font-size: 0.97rem; }
+.variant__num { font-size: 3.2rem; font-weight: 800; line-height: 1; letter-spacing: -0.04em; margin-bottom: 8px; }
+.variant__go { display: inline-flex; align-items: center; gap: 4px; font-size: 0.94rem; font-weight: 600; height: 30px; }
+.variant .badge { background: var(--surface); }
+
+.tests-section .section-title { margin-bottom: 20px; }
+.tests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+
+.test-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  border-radius: var(--r-l);
+  background: var(--surface);
+  color: inherit;
+  transition: background-color 0.15s;
+}
+.test-card:hover { background: var(--surface-2); }
+.test-card__top { display: flex; gap: 8px; }
+.test-card h3 { font-size: 1.35rem; line-height: 1.25; }
+.test-card__lecture { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 0.94rem; }
+.test-card__go { margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--primary); }
+
+.results-block { margin-top: 12px; }
+
+@media (max-width: 900px) {
+  .series { grid-template-columns: 1fr; padding: 28px 22px; border-radius: var(--r-l); }
+  .series__info .btn { width: 100%; }
+}

@@ -1,143 +1,164 @@
-.video-wrapper { margin-bottom: 20px; }
-.lecture-content { line-height: 1.6; font-size: 18px; }
+.lecture { padding: 24px 0 96px; }
 
-.lecture-content h2, .lecture-content h3 {
-  color: #2c3e50;
-  margin-top: 2rem;
+.lecture__progress {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand);
+  transform-origin: 0 50%;
+  z-index: 999;
 }
 
-.test-button {
-  display: inline-block;
-  padding: 14px 32px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
+.lecture__head .container { padding-top: 24px; padding-bottom: 32px; }
+
+.crumbs { display: flex; gap: 8px; font-size: 0.97rem; color: var(--muted); margin-bottom: 16px; }
+.crumbs a { color: var(--muted); }
+.crumbs a:hover { color: var(--ink); }
+
+.lecture__title { font-size: clamp(2.2rem, 4.4vw, 3.4rem); font-weight: 800; letter-spacing: -0.035em; }
+.lecture__meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+
+.lecture__video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-l);
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: var(--surface-2);
+}
+.lecture__video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- Содержимое лекции ----------
+   Лекции хранятся в БД как HTML с inline-стилями. Здесь мы приводим их
+   к единой типографике сайта (поэтому много !important). */
+.lecture-content {
+  padding: 48px;
+  border-radius: var(--r-l);
+  background: var(--surface);
   font-size: 1.1rem;
-  transition: all 0.3s;
+  line-height: 1.75;
+  color: var(--text);
 }
 
-.test-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+.lecture-content div,
+.lecture-content p,
+.lecture-content li,
+.lecture-content span[style],
+.lecture-content td,
+.lecture-content th {
+  color: var(--text) !important;
+  font-size: inherit !important;
+  text-align: left !important;
 }
+.lecture-content > div { max-width: none !important; margin: 0 !important; }
 
-
-.topic-page {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.topic-header h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-  color: #1a365d;
+.lecture-content h2,
+.lecture-content h3,
+.lecture-content h4 {
+  font-family: var(--font) !important;
+  color: var(--ink) !important;
+  text-align: left !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
+.lecture-content h2 { font-size: 1.9rem !important; margin: 0 0 1.5rem !important; }
+.lecture-content > h2:first-child { display: none; } /* дублирует заголовок страницы */
+.lecture-content h3 { font-size: 1.6rem !important; margin: 2.75rem 0 1rem !important; }
+.lecture-content div > h3:first-child { margin-top: 0 !important; }
+.lecture-content h4 { font-size: 1.25rem !important; margin: 2rem 0 0.75rem !important; }
 
-.topic-cover {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.lecture-content p { margin: 0 0 1.1rem !important; }
+.lecture-content strong { color: var(--ink) !important; font-weight: 600; }
+.lecture-content em { color: inherit !important; }
+
+.lecture-content ul,
+.lecture-content ol {
+  max-width: none !important;
+  margin: 1rem 0 1.5rem !important;
+  padding-left: 1.4rem !important;
+  list-style-position: outside !important;
+  text-align: left !important;
 }
+.lecture-content li { margin: 0.4rem 0; padding-left: 0.3rem; }
+.lecture-content li::marker { color: var(--brand-soft); font-weight: 700; }
 
-.video-embed {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  margin: 2rem 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.video-embed iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.lecture-content {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #2d3748;
-}
-
-.lecture-content h2 {
-  font-size: 1.8rem;
-  margin: 2.5rem 0 1rem;
-  color: #2b6cb0;
-  border-bottom: 2px solid #bee3f8;
-  padding-bottom: 0.5rem;
-}
-
-.lecture-content h3 {
-  font-size: 1.4rem;
-  margin: 2rem 0 1rem;
-  color: #2c5282;
-}
-
-.lecture-content p {
-  margin: 1.2rem 0;
-}
-
-.test-callout {
-  background: #f0fff4;
-  border: 1px solid #9ae6b4;
-  border-radius: 12px;
-  padding: 2rem;
-  margin: 3rem 0;
+/* Формулы на отдельной строке */
+.lecture-content .katex-display {
+  margin: 1.5rem 0 !important;
+  padding: 20px 24px;
+  background: var(--surface-2);
+  border-radius: 20px;
   text-align: center;
 }
+.lecture-content p:has(> .katex-display) { margin: 0 !important; }
 
-.test-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #48bb78, #38a169);
-  color: white;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  transition: all 0.3s;
+/* Иллюстрации */
+.lecture-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.75rem auto !important;
+  border-radius: 20px !important;
+  box-shadow: none !important;
+  background: #fff;
 }
+:root[data-theme='dark'] .lecture-content img { border: 8px solid #fff; }
+.lecture-content div:has(> img) { max-width: 560px !important; margin: 0 auto !important; }
 
-.test-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(72, 187, 120, 0.4);
+/* Цветные блоки-подсказки из лекций */
+.lecture-content [style*='background'] {
+  background: var(--surface-2) !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  padding: 22px 26px !important;
+  margin: 1.5rem 0 !important;
 }
+.lecture-content [style*='#f0fdf4'],
+.lecture-content [style*='#dcfce7'] { background: var(--mint) !important; }
+:root[data-theme='dark'] .lecture-content [style*='#f0fdf4'],
+:root[data-theme='dark'] .lecture-content [style*='#dcfce7'] { background: var(--block-mint) !important; }
+.lecture-content [style*='#fef2f2'],
+.lecture-content [style*='#fee2e2'] { background: var(--bad-soft) !important; }
 
-.test-hint {
-  color: #2f855a;
-  font-style: italic;
+.lecture-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1rem; }
+.lecture-content th, .lecture-content td { padding: 12px 14px !important; border: 0 !important; border-bottom: 1px solid var(--line) !important; background: transparent !important; }
+.lecture-content th { color: var(--muted) !important; font-weight: 500; }
+
+/* ---------- Тест к лекции ---------- */
+.lecture__test {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 12px;
+  padding: 36px 40px;
+  border-radius: var(--r-l);
+  background: var(--block-dark);
 }
+.lecture__test h3 { color: #fff; font-size: 1.75rem; font-weight: 800; }
+.lecture__test p { color: rgba(255, 255, 255, 0.72); margin-top: 6px; }
 
-.navigation {
-  text-align: center;
-  margin-top: 4rem;
+/* ---------- Соседние лекции ---------- */
+.lecture__pager { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.pager-link {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 28px;
+  border-radius: var(--r-l);
+  background: var(--surface);
+  transition: background-color 0.15s;
 }
+.pager-link:hover { background: var(--surface-2); }
+.pager-link span { display: inline-flex; align-items: center; gap: 6px; font-size: 0.94rem; color: var(--muted); }
+.pager-link strong { color: var(--ink); font-size: 1.2rem; line-height: 1.25; }
+.pager-link--next { text-align: right; align-items: flex-end; }
 
-.back-link {
-  color: #4299e1;
-  font-size: 1.1rem;
-  text-decoration: none;
-}
-
-.back-link:hover {
-  text-decoration: underline;
-}
-
-.loading, .error-container, .not-found {
-  text-align: center;
-  padding: 4rem 1rem;
-  font-size: 1.3rem;
-  color: #4a5568;
+@media (max-width: 640px) {
+  .lecture-content { padding: 24px 20px; font-size: 1.04rem; }
+  .lecture__test { flex-direction: column; align-items: stretch; padding: 28px 22px; }
+  .lecture__pager { grid-template-columns: 1fr; }
 }

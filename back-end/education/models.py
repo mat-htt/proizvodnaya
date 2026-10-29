@@ -26,6 +26,9 @@ class StudentProfile(models.Model):
 class Test(models.Model):
     title = models.CharField("Название теста", max_length=255)
     description = models.TextField("Описание темы", blank=True)
+    # Серия объединяет варианты одной контрольной (например, «Контрольная работа: производная»)
+    series = models.CharField("Серия (контрольная)", max_length=255, blank=True)
+    variant = models.PositiveSmallIntegerField("Номер варианта", null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
