@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--brand);
+  background: var(--accent);
   transform-origin: 0 50%;
   z-index: 999;
 }
@@ -83,7 +83,7 @@
   text-align: left !important;
 }
 .lecture-content li { margin: 0.4rem 0; padding-left: 0.3rem; }
-.lecture-content li::marker { color: var(--brand-soft); font-weight: 700; }
+.lecture-content li::marker { color: var(--accent-text); font-weight: 700; }
 
 /* Формулы на отдельной строке */
 .lecture-content .katex-display {
@@ -105,7 +105,6 @@
   box-shadow: none !important;
   background: #fff;
 }
-:root[data-theme='dark'] .lecture-content img { border: 8px solid #fff; }
 .lecture-content div:has(> img) { max-width: 560px !important; margin: 0 auto !important; }
 
 /* Цветные блоки-подсказки из лекций */
@@ -117,9 +116,7 @@
   margin: 1.5rem 0 !important;
 }
 .lecture-content [style*='#f0fdf4'],
-.lecture-content [style*='#dcfce7'] { background: var(--mint) !important; }
-:root[data-theme='dark'] .lecture-content [style*='#f0fdf4'],
-:root[data-theme='dark'] .lecture-content [style*='#dcfce7'] { background: var(--block-mint) !important; }
+.lecture-content [style*='#dcfce7'] { background: var(--accent-soft) !important; }
 .lecture-content [style*='#fef2f2'],
 .lecture-content [style*='#fee2e2'] { background: var(--bad-soft) !important; }
 
@@ -136,7 +133,7 @@
   margin-top: 12px;
   padding: 36px 40px;
   border-radius: var(--r-l);
-  background: var(--block-dark);
+  background: var(--dark);
 }
 .lecture__test h3 { color: #fff; font-size: 1.75rem; font-weight: 800; }
 .lecture__test p { color: rgba(255, 255, 255, 0.72); margin-top: 6px; }

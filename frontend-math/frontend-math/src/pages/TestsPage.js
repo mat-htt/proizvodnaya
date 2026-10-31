@@ -26,7 +26,7 @@ const TestsPage = ({ user }) => {
       .finally(() => setLoading(false));
   }, [isLoggedIn, user.isLoggedIn]);
 
-  // Варианты одной контрольной собираем в серию, остальные — отдельные тесты
+  // Варианты одного тестирования собираем в серию, остальные — отдельные тесты
   const { series, single } = useMemo(() => {
     const groups = {};
     const rest = [];
@@ -46,9 +46,9 @@ const TestsPage = ({ user }) => {
     <div className="page">
       <div className="container">
         <header className="page-head">
-          <h1 className="page-title">Тесты и контрольная</h1>
+          <h1 className="page-title">Тесты</h1>
           <p className="page-lead">
-            Выберите вариант контрольной или тест к конкретной лекции. Ответы проверяются автоматически,
+            Выберите вариант итогового тестирования или тест к конкретной лекции. Ответы проверяются автоматически,
             а разбор ошибок появится сразу после отправки.
           </p>
         </header>
@@ -75,7 +75,8 @@ const TestsPage = ({ user }) => {
               return (
                 <section key={name} className="series">
                   <div className="series__info">
-                    <h2>{name.replace(/^Контрольная работа:\s*/i, 'Контрольная работа: ')}</h2>
+                    <span className="tag">Итоговое тестирование</span>
+                    <h2>{name}</h2>
                     <p>{variants[0]?.description}</p>
                     <ul className="series__facts">
                       <li><strong>{variants.length}</strong> {plural(variants.length, 'вариант', 'варианта', 'вариантов')}</li>
@@ -89,7 +90,7 @@ const TestsPage = ({ user }) => {
 
                   <div className="series__variants">
                     {variants.map(v => (
-                      <Link key={v.id} to={`/quiz/${v.id}`} className="variant">
+                      <Link key={v.id} to={`/quiz/${v.id}`} className="variant spotlight">
                         <span className="variant__label">Вариант</span>
                         <span className="variant__num">{v.variant ?? '—'}</span>
                         {best[v.id] !== undefined
@@ -107,7 +108,7 @@ const TestsPage = ({ user }) => {
                 <h2 className="section-title">Тесты к лекциям</h2>
                 <div className="tests-grid">
                   {single.map(t => (
-                    <Link key={t.id} to={`/quiz/${t.id}`} className="test-card">
+                    <Link key={t.id} to={`/quiz/${t.id}`} className="test-card spotlight">
                       <div className="test-card__top">
                         <span className="badge">{t.question_count} {plural(t.question_count, 'вопрос', 'вопроса', 'вопросов')}</span>
                         {best[t.id] !== undefined && <span className={`badge badge--${scoreTone(best[t.id])}`}>{best[t.id]}%</span>}

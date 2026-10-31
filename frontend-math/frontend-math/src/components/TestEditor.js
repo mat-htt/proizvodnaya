@@ -109,7 +109,7 @@ const TestEditor = ({ heading, initial, lectures, submitLabel, onSubmit }) => {
               </div>
               <div className="field">
                 <label className="label" htmlFor="t-series">Серия (для вариантов)</label>
-                <input id="t-series" className="input" placeholder="Контрольная работа: …"
+                <input id="t-series" className="input" placeholder="Итоговое тестирование: …"
                   value={form.series} onChange={e => set('series', e.target.value)} />
               </div>
               <div className="field editor__variant">

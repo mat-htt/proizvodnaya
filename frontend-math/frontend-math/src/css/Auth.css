@@ -23,7 +23,7 @@
   gap: 32px;
   padding: 48px;
   border-radius: var(--r-xl);
-  background: var(--block-dark);
+  background: var(--dark);
   color: rgba(255, 255, 255, 0.78);
   font-size: 1.15rem;
 }
@@ -32,7 +32,7 @@
   font-weight: 800;
   letter-spacing: -0.05em;
   line-height: 1;
-  color: var(--mint);
+  color: var(--accent-soft);
 }
 
 @media (max-width: 800px) {

@@ -8,7 +8,7 @@
   background: var(--surface);
 }
 .live__controls .field + .field { margin-top: 0; }
-.live__buttons { display: flex; gap: 8px; }
+.live__buttons { display: flex; flex-wrap: wrap; gap: 8px; }
 .live__buttons .btn { height: 54px; }
 .live__hint { margin: 12px 4px 12px; }
 
@@ -19,7 +19,7 @@
   gap: 12px;
   padding: 12px;
   border-radius: var(--r-xl);
-  background: var(--brand-deep);
+  background: var(--dark);
 }
 .live:fullscreen { border-radius: 0; padding: 4vh 4vw; gap: 3vw; align-items: stretch; }
 
@@ -30,8 +30,8 @@
   justify-content: center;
   padding: 40px 32px;
   border-radius: var(--r-l);
-  background: var(--mint);
-  color: var(--brand-deep);
+  background: var(--accent-soft);
+  color: var(--ink);
   text-align: center;
 }
 .live__qr { width: 100%; max-width: 340px; padding: 20px; border-radius: 24px; background: #fff; }
@@ -73,8 +73,9 @@
   font-size: 1.25rem;
   font-weight: 800;
 }
-.live__row--top1 .live__place { background: var(--mint); color: var(--brand-deep); }
-.live__row--top2 .live__place, .live__row--top3 .live__place { background: var(--mint-2); color: var(--brand-deep); opacity: 0.85; }
+.live__row--top1 .live__place { background: #c6f135; color: #111411; }
+.live__row--top2 .live__place, .live__row--top3 .live__place { background: rgba(198, 241, 53, 0.25); color: #c6f135; }
+.live__row--top1 .live__score { color: #c6f135; }
 .live__name { display: flex; flex-direction: column; font-size: 1.3rem; font-weight: 700; line-height: 1.2; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .live__name small { font-size: 0.94rem; font-weight: 400; color: rgba(255, 255, 255, 0.6); }
 .live__score { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
@@ -86,4 +87,14 @@
   .live__controls { grid-template-columns: 1fr; }
   .live { grid-template-columns: 1fr; }
   .live__board { padding: 20px 12px; }
+}
+
+@media (max-width: 600px) {
+  .live__controls { padding: 16px; }
+  .live__buttons .btn { flex: 1 1 auto; }
+  .live__join { padding: 24px 18px; }
+  .live__row { grid-template-columns: 40px 1fr auto; gap: 10px; padding: 10px 14px 10px 10px; }
+  .live__place { height: 36px; font-size: 1.05rem; }
+  .live__name { font-size: 1.05rem; }
+  .live__score { font-size: 1.35rem; }
 }

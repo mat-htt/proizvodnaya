@@ -27,7 +27,7 @@
 .stats__percent--bad { color: var(--bad); }
 .stats__rate span { color: var(--muted); margin-top: 4px; }
 
-.stats__num { font-weight: 700; color: var(--brand-soft); }
+.stats__num { font-weight: 700; color: var(--accent-text); }
 .stats__text { color: var(--ink); margin-top: 6px; line-height: 1.6; }
 
 .stats__bar { height: 8px; border-radius: 8px; background: var(--surface-2); margin: 18px 0 14px; overflow: hidden; }

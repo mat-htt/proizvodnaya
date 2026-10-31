@@ -16,6 +16,8 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+const PUBLIC_PATHS = ['/', '/topic', '/tests', '/login', '/register', '/resources', '/contact', '/privacy', '/terms'];
+
 // Авто-обновление токена при 401
 api.interceptors.response.use(
   response => response,
@@ -37,6 +39,12 @@ api.interceptors.response.use(
         } catch (err) {
           localStorage.removeItem('access_token');
           localStorage.removeItem('refresh_token');
+          // Сессия истекла. На открытых страницах (курс, лекции) просто повторяем
+          // запрос без токена, а с закрытых отправляем на вход
+          if (PUBLIC_PATHS.some(p => window.location.pathname === p || window.location.pathname.startsWith(`${p}/`))) {
+            delete originalRequest.headers.Authorization;
+            return api(originalRequest);
+          }
           window.location.href = '/login';
         }
       }

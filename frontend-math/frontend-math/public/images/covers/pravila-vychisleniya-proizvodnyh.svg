@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="640" height="320">
+<defs>
+  <pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".06"/></pattern>
+  <radialGradient id="glow"><stop offset="0" stop-color="#c6f135" stop-opacity=".55"/><stop offset="1" stop-color="#c6f135" stop-opacity="0"/></radialGradient>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c6f135"/></marker>
+  <marker id="arrc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff9f8f"/></marker>
+</defs>
+<rect width="640" height="320" fill="#141714"/>
+<rect width="640" height="320" fill="url(#g)"/>
+<circle cx="560" cy="40" r="190" fill="url(#glow)"/>
+<text x="40" y="230" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="260" font-weight="800" fill="#c6f135" fill-opacity="0.18" text-anchor="start" letter-spacing="-0.5">′</text><rect x="230" y="58" width="300" height="46" rx="23" fill="#c6f135"/><text x="252" y="88" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#111411" fill-opacity="1" text-anchor="start" letter-spacing="-0.5">(xⁿ)′ = n·xⁿ⁻¹</text><rect x="270" y="118" width="300" height="46" rx="23" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".18"/><text x="292" y="148" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" fill-opacity="1" text-anchor="start" letter-spacing="-0.5">(sin x)′ = cos x</text><rect x="210" y="178" width="330" height="46" rx="23" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".18"/><text x="232" y="208" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" fill-opacity="1" text-anchor="start" letter-spacing="-0.5">(u·v)′ = u′v + uv′</text><rect x="300" y="238" width="250" height="46" rx="23" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".18"/><text x="322" y="268" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" fill-opacity="1" text-anchor="start" letter-spacing="-0.5">(eˣ)′ = eˣ</text><text x="32" y="286" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="800" fill="#ffffff" fill-opacity="1" text-anchor="start" letter-spacing="-0.5">Таблица</text>
+</svg>

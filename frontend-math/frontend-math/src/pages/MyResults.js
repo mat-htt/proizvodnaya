@@ -34,7 +34,7 @@ const MyResults = () => {
         ) : attempts === 0 ? (
           <div className="state card">
             <h3>Вы ещё не проходили тесты</h3>
-            <p>Начните с контрольной работы или теста к любой лекции.</p>
+            <p>Начните с итогового тестирования или теста к любой лекции.</p>
             <Link to="/tests" className="btn btn--primary">К тестам <ArrowRight size={16} /></Link>
           </div>
         ) : (

@@ -75,7 +75,7 @@ const Register = () => {
             autoComplete="username"
             autoFocus
           />
-          <span className="hint">Латиница, цифры и символы _ - . @ +</span>
+          <span className="hint">Буквы, цифры и символы _ - . @ +</span>
         </div>
 
         <div className="field">

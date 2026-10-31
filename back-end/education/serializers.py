@@ -123,11 +123,15 @@ class LectureSerializer(serializers.ModelSerializer):
 
 
 class TestSubmissionSerializer(serializers.ModelSerializer):
-    # ТЕПЕРЬ ДОСТАЕМ ИМЕННО USERNAME
-    student_name = serializers.CharField(source='student.user.username', read_only=True)
+    # Имя и фамилия, если заполнены, иначе логин
+    student_name = serializers.SerializerMethodField()
     group_name = serializers.CharField(source='student.group.name', read_only=True, allow_null=True)
     test_title = serializers.CharField(source='test.title', read_only=True)
 
     class Meta:
         model = TestSubmission
         fields = ['id', 'student_name', 'group_name', 'test', 'test_title', 'score', 'submitted_at']
+
+    def get_student_name(self, obj):
+        user = obj.student.user
+        return user.get_full_name() or user.username

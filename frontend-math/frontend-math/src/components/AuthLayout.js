@@ -13,7 +13,7 @@ const AuthLayout = ({ title, subtitle, children, footer }) => (
 
     <aside className="auth__aside" aria-hidden="true">
       <p className="auth__big">f′(x)</p>
-      <p>Лекции, задачи и контрольная по производной — результаты сохраняются в профиле.</p>
+      <p>Лекции, задачи и итоговое тестирование по производной — результаты сохраняются в профиле.</p>
     </aside>
   </div>
 );

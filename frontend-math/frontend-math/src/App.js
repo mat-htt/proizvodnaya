@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import api from './api';
 import { ToastProvider } from './components/Toast';
+import { useRevealOnScroll, useSpotlight } from './utils/effects';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -38,6 +39,13 @@ const ScrollToTop = () => {
   return null;
 };
 
+// Анимации появления и подсветка карточек — на всех страницах
+const Effects = () => {
+  useRevealOnScroll();
+  useSpotlight();
+  return null;
+};
+
 function App() {
   const [user, setUser] = useState({
     isLoggedIn: false,
@@ -54,7 +62,8 @@ function App() {
         setUser({
           isLoggedIn: true,
           isTeacher: res.data.is_teacher,
-          username: res.data.username || 'Пользователь'
+          username: res.data.username || 'Пользователь',
+          fullName: res.data.full_name || ''
         });
       } catch (err) {
         console.error("Сессия истекла");
@@ -75,7 +84,9 @@ function App() {
     <Router>
       <ToastProvider>
         <ScrollToTop />
+        <Effects />
         <div className="app-shell">
+          <div className="bg-orbs" aria-hidden="true"><span /><span /></div>
           <Header user={user} onLogout={refreshAuth} />
 
           <main className="app-main">

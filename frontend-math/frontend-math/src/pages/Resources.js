@@ -36,7 +36,7 @@ const Resources = () => (
 
       <div className="resources">
         {resourceList.map(({ id, title, description, link, category }) => (
-          <a key={id} href={link} target="_blank" rel="noopener noreferrer" className="resource">
+          <a key={id} href={link} target="_blank" rel="noopener noreferrer" className="resource spotlight">
             <span className="badge">{category}</span>
             <h3>{title}</h3>
             <p>{description}</p>

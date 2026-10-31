@@ -1,7 +1,7 @@
 .dash__actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .dash__meter { height: 6px; border-radius: 6px; background: var(--surface-2); margin-top: 14px; overflow: hidden; }
-.dash__meter span { display: block; height: 100%; background: var(--brand); border-radius: 6px; }
+.dash__meter span { display: block; height: 100%; background: var(--accent); border-radius: 6px; }
 
 .dash__filters {
   display: grid;
@@ -35,12 +35,11 @@
   width: 36px;
   height: 36px;
   border-radius: 12px;
-  background: var(--mint);
-  color: var(--brand-deep);
+  background: var(--accent-soft);
+  color: var(--ink);
   font-weight: 700;
   font-size: 0.94rem;
 }
-:root[data-theme='dark'] .dash__avatar { background: var(--block-mint); color: var(--mint); }
 .dash__muted { color: var(--muted) !important; }
 .dash__empty { text-align: center; padding: 48px !important; color: var(--muted) !important; }
 

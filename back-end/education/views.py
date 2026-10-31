@@ -26,9 +26,9 @@ class SubmitTestView(APIView):
         if serializer.is_valid():
             data = serializer.validated_data
             test_id = data['test_id']
-            test = Test.objects.get(id=test_id)
+            test = get_object_or_404(Test, id=test_id)
 
-            student = request.user.student_profile
+            student, _ = StudentProfile.objects.get_or_create(user=request.user)
 
             submission = TestSubmission.objects.create(
                 student=student,
@@ -102,9 +102,14 @@ class TeacherResultsView(generics.ListAPIView):
 
 
 class LectureViewSet(viewsets.ModelViewSet):
-    queryset = Lecture.objects.all()
+    queryset = Lecture.objects.all().order_by('id')
     serializer_class = LectureSerializer
     lookup_field = 'slug'
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            return [permissions.AllowAny()]
+        return [IsAdminUser()]
 
 
 class TestViewSet(viewsets.ModelViewSet):
@@ -175,7 +180,7 @@ class TestViewSet(viewsets.ModelViewSet):
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
     # Исправленная строка (убрали звездочку перед pk или убрали =None)
-    def update(self, request, pk=None):
+    def update(self, request, pk=None, **kwargs):
         test = self.get_object()
         data = request.data
 
@@ -221,6 +226,7 @@ class MeView(APIView):
     def get(self, request):
         return Response({
             'username': request.user.username,
+            'full_name': request.user.get_full_name(),
             'is_teacher': request.user.is_staff
         })
 
@@ -254,8 +260,14 @@ class SubmissionDetailView(APIView):
     permission_classes = [IsAdminUser]
 
     def get(self, request, pk):
-        submission = TestSubmission.objects.get(id=pk)
-        responses = StudentResponse.objects.filter(submission=submission).select_related('question')
+        submission = get_object_or_404(TestSubmission, id=pk)
+        responses = StudentResponse.objects.filter(submission=submission).select_related('question', 'selected_choice')
+
+        def correct_answer(question):
+            if question.q_type == 'CHOICE':
+                right = question.choices.filter(is_correct=True).first()
+                return right.text if right else ''
+            return question.correct_text_answer or ''
 
         data = {
             'student_name': submission.student.user.get_full_name() or "—",
@@ -266,7 +278,7 @@ class SubmissionDetailView(APIView):
                 {
                     'question_text': r.question.text,
                     'user_answer': r.selected_choice.text if r.selected_choice else r.text_answer,
-                    'correct_answer': r.question.correct_text_answer or (r.question.choices.filter(is_correct=True).first().text if r.question.q_type == 'CHOICE' else ""),
+                    'correct_answer': correct_answer(r.question),
                     'is_correct': r.is_correct,
                 } for r in responses
             ]
@@ -370,7 +382,7 @@ class LeaderboardView(APIView):
         return Response({
             'participants': len(rows),
             'rows': [{
-                'name': s.student.user.username,
+                'name': s.student.user.get_full_name() or s.student.user.username,
                 'group': s.student.group.name if s.student.group else '',
                 'score': s.score,
                 'variant': s.test.variant,

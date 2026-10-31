@@ -1,10 +1,10 @@
-"""Загружает контрольную работу «Производная» (4 варианта по 10 задач).
+"""Загружает итоговое тестирование по производной (4 варианта по 10 задач).
 
 Запуск:  python manage.py seed_control_tests
 
 Команду можно запускать повторно: тесты ищутся по серии и номеру варианта,
 вопросы пересоздаются. Результаты учеников по этим тестам при этом удаляются
-вместе со старыми вопросами, поэтому после проведения контрольной лучше
+вместе со старыми вопросами, поэтому после проведения тестирования лучше
 не перезапускать.
 """
 from django.core.management.base import BaseCommand
@@ -12,7 +12,9 @@ from django.db import transaction
 
 from education.models import Test, Question
 
-SERIES = 'Контрольная работа: производная'
+SERIES = 'Итоговое тестирование: производная'
+# Так серия называлась раньше — при запуске переименовываем, чтобы не плодить дубли
+OLD_SERIES = 'Контрольная работа: производная'
 DESCRIPTION = ('10 прикладных задач из мира IT: скорость роста, касательная, '
                'производная сложной функции, экстремумы. Ответ — число; '
                'дроби можно вводить как -1/25 или -0.04.')
@@ -70,16 +72,17 @@ VARIANTS = {
 
 
 class Command(BaseCommand):
-    help = 'Создаёт (или обновляет) 4 варианта контрольной работы по производной'
+    help = 'Создаёт (или обновляет) 4 варианта итогового тестирования по производной'
 
     @transaction.atomic
     def handle(self, *args, **options):
+        Test.objects.filter(series=OLD_SERIES).update(series=SERIES)
         for number, questions in VARIANTS.items():
             test, created = Test.objects.update_or_create(
                 series=SERIES,
                 variant=number,
                 defaults={
-                    'title': f'Контрольная работа · Вариант {number}',
+                    'title': f'Итоговое тестирование · Вариант {number}',
                     'description': DESCRIPTION,
                 },
             )

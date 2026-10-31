@@ -43,7 +43,7 @@ const LivePage = () => {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(session)); } catch (e) { /* нет доступа */ }
   }, [session]);
 
-  // Что можно вывести на экран: целая контрольная (все варианты) или отдельный тест
+  // Что можно вывести на экран: итоговое тестирование целиком (все варианты) или отдельный тест
   const options = useMemo(() => {
     const series = {};
     const single = [];

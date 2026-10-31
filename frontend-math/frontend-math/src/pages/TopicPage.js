@@ -106,7 +106,7 @@ const TopicPage = () => {
               <h3>Проверьте себя</h3>
               <p>Короткий тест по этой лекции, результат — сразу после отправки.</p>
             </div>
-            <Link to={`/quiz/${topic.related_test}`} className="btn btn--mint btn--lg">
+            <Link to={`/quiz/${topic.related_test}`} className="btn btn--primary btn--lg">
               Пройти тест <ArrowRight size={18} />
             </Link>
           </div>
@@ -127,7 +127,7 @@ const TopicPage = () => {
           ) : (
             <Link to="/tests" className="pager-link pager-link--next">
               <span>Финиш <ArrowRight size={16} /></span>
-              <strong>Контрольная работа</strong>
+              <strong>Итоговое тестирование</strong>
             </Link>
           )}
         </nav>

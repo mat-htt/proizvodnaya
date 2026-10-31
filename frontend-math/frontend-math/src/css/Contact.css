@@ -19,8 +19,8 @@
   height: 60px;
   flex-shrink: 0;
   border-radius: 18px;
-  background: var(--brand);
-  color: #fff;
+  background: var(--ink);
+  color: var(--accent);
 }
 .contact__body { flex: 1; min-width: 0; }
 .contact__body h3 { font-size: 1.4rem; }

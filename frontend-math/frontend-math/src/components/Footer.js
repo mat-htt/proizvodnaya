@@ -9,13 +9,13 @@ const Footer = () => (
       <div className="footer__grid">
         <div className="footer__brand">
           <Logo />
-          <p>Курс по производной: лекции, задачи и контрольная работа.</p>
+          <p>Курс по производной: лекции, задачи и итоговое тестирование.</p>
         </div>
 
         <nav className="footer__col" aria-label="Обучение">
           <h4>Обучение</h4>
           <Link to="/">Программа курса</Link>
-          <Link to="/tests">Тесты и контрольная</Link>
+          <Link to="/tests">Тесты</Link>
           <Link to="/resources">Материалы</Link>
         </nav>
 

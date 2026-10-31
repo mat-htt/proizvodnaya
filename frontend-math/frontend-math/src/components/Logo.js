@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const LogoMark = ({ size = 36 }) => (
-  <span className="logo__mark" style={{ width: size, height: size, fontSize: size * 0.6 }} aria-hidden="true">∑</span>
+// Логотип MathBase — тот же значок Σ, что и в презентации проекта
+export const LogoMark = ({ size = 38 }) => (
+  <img src="/logo.png" alt="" width={size} height={size} className="logo__mark" />
 );
 
 const Logo = ({ onClick }) => (

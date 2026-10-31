@@ -32,7 +32,7 @@
   height: 28px;
   flex-shrink: 0;
   border-radius: 9px;
-  background: var(--mint);
-  color: var(--brand-deep);
+  background: var(--accent-soft);
+  color: var(--ink);
 }
 .toast--error .toast__icon { background: #f8c9c4; color: #8c1f17; }

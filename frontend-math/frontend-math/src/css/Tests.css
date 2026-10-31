@@ -36,13 +36,11 @@
   gap: 4px;
   padding: 22px 24px;
   border-radius: var(--r-m);
-  background: var(--mint);
-  color: var(--brand-deep);
+  background: var(--accent-soft);
+  color: var(--ink);
   transition: background-color 0.15s;
 }
-:root[data-theme='dark'] .variant { background: var(--block-mint); color: var(--mint); }
-.variant:hover { background: var(--mint-2); }
-:root[data-theme='dark'] .variant:hover { background: #2a5440; }
+.variant:hover { background: var(--accent); }
 .variant__label { font-size: 0.97rem; }
 .variant__num { font-size: 3.2rem; font-weight: 800; line-height: 1; letter-spacing: -0.04em; margin-bottom: 8px; }
 .variant__go { display: inline-flex; align-items: center; gap: 4px; font-size: 0.94rem; font-weight: 600; height: 30px; }
