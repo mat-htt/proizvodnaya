@@ -1,117 +1,57 @@
-.create-test-page {
-    background: #f3f4f6;
-    min-height: 100vh;
-    padding: 40px 20px;
+.editor { display: flex; flex-direction: column; gap: 12px; }
+.editor__section-title { font-size: 1.4rem; margin-bottom: 20px; }
+
+.editor__row { display: grid; grid-template-columns: 1.2fr 1.2fr 0.5fr; gap: 12px; margin-top: 18px; }
+.editor__row .field + .field { margin-top: 0; }
+
+.qedit { display: flex; flex-direction: column; gap: 14px; }
+.qedit .field + .field, .qedit .field { margin-top: 0; }
+.qedit__head { display: flex; align-items: center; gap: 12px; }
+.qedit__num { font-weight: 700; color: var(--accent-text); }
+.qedit__head .segmented { margin-left: auto; }
+
+.qedit__preview { padding: 14px 18px; border-radius: 16px; background: var(--accent-soft); color: var(--ink); }
+.qedit__preview > span { display: block; font-size: 0.875rem; opacity: 0.75; margin-bottom: 4px; }
+
+.choice-edit { display: flex; align-items: center; gap: 10px; }
+.choice-edit input[type='radio'] { width: 20px; height: 20px; accent-color: var(--accent-text); flex-shrink: 0; cursor: pointer; }
+.editor__add-choice { align-self: flex-start; }
+
+.editor__add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 72px;
+  border: 0;
+  border-radius: var(--r-l);
+  background: var(--surface);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.06rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
 }
+.editor__add:hover { background: var(--surface-2); }
 
-.create-test-container {
-    max-width: 800px;
-    margin: 0 auto;
+.editor__footer {
+  position: sticky;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 12px 12px 24px;
+  border-radius: var(--r-m);
+  background: var(--dark);
+  color: rgba(255, 255, 255, 0.75);
 }
+.editor__footer .hint { color: rgba(255, 255, 255, 0.7); }
+.editor__footer .form-error { padding: 10px 14px; }
 
-.page-title {
-    color: #1a3c34;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: 700;
+@media (max-width: 720px) {
+  .editor__row { grid-template-columns: 1fr; }
+  .qedit__head { flex-wrap: wrap; }
+  .qedit__head .segmented { order: 3; margin-left: 0; width: 100%; }
+  .segmented button { flex: 1; }
 }
-
-.form-section {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.main-input, .main-select, .main-textarea {
-    padding: 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.main-textarea { min-height: 80px; resize: vertical; }
-
-.question-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-    border-left: 5px solid #10b981;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.question-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: #4b5563;
-}
-
-.q-text-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    font-weight: 500;
-}
-
-.choice-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.choice-row input[type="text"] {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
-}
-
-.add-choice-btn {
-    background: none;
-    border: none;
-    color: #059669;
-    cursor: pointer;
-    font-size: 0.9rem;
-    padding: 5px 0;
-}
-
-.form-actions {
-    display: flex;
-    gap: 15px;
-    margin-top: 2rem;
-}
-
-.add-q-btn {
-    flex: 1;
-    padding: 15px;
-    background: white;
-    border: 2px dashed #10b981;
-    color: #10b981;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.submit-test-btn {
-    flex: 1;
-    padding: 15px;
-    background: #10b981;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.submit-test-btn:disabled { background: #9ca3af; }
-.remove-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #ef4444; }

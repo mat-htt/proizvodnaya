@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="640" height="320">
+<defs>
+  <pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".06"/></pattern>
+  <radialGradient id="glow"><stop offset="0" stop-color="#c6f135" stop-opacity=".55"/><stop offset="1" stop-color="#c6f135" stop-opacity="0"/></radialGradient>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c6f135"/></marker>
+  <marker id="arrc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff9f8f"/></marker>
+</defs>
+<rect width="640" height="320" fill="#141714"/>
+<rect width="640" height="320" fill="url(#g)"/>
+<circle cx="560" cy="40" r="190" fill="url(#glow)"/>
+<text x="320" y="200" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="120" font-weight="800" fill="#ffffff" fill-opacity="1" text-anchor="middle" letter-spacing="-0.5">f′(x)</text><text x="320" y="200" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="120" font-weight="800" fill="#c6f135" fill-opacity="0" text-anchor="end" letter-spacing="-0.5">f′</text>
+</svg>

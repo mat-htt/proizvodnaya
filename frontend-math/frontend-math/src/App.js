@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import api from './api';
+import { ToastProvider } from './components/Toast';
+import { useRevealOnScroll, useSpotlight } from './utils/effects';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Hub from './pages/Hub';
 import QuizPage from './pages/QuizPage';
 import TopicPage from './pages/TopicPage';
+import TestsPage from './pages/TestsPage';
+import MyResults from './pages/MyResults';
 import TeacherDashboard from './pages/TeacherDashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -18,13 +21,32 @@ import Contact from './pages/Contact';
 import CreateTest from './pages/CreateTest';
 import ManageTests from './pages/ManageTests';
 import EditTest from './pages/EditTest';
+import TestStats from './pages/TestStats';
+import LivePage from './pages/LivePage';
+import StartQuiz from './pages/StartQuiz';
 
 const PrivateRoute = ({ children }) => {
-  return localStorage.getItem('access_token') ? children : <Navigate to="/login" />;
+  const location = useLocation();
+  return localStorage.getItem('access_token')
+    ? children
+    : <Navigate to="/login" state={{ from: location.pathname + location.search }} replace />;
+};
+
+// При переходе между страницами прокручиваем наверх
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+};
+
+// Анимации появления и подсветка карточек — на всех страницах
+const Effects = () => {
+  useRevealOnScroll();
+  useSpotlight();
+  return null;
 };
 
 function App() {
-  const [lectures, setLectures] = useState([]);
   const [user, setUser] = useState({
     isLoggedIn: false,
     isTeacher: false,
@@ -40,11 +62,13 @@ function App() {
         setUser({
           isLoggedIn: true,
           isTeacher: res.data.is_teacher,
-          username: res.data.username || 'Пользователь'
+          username: res.data.username || 'Пользователь',
+          fullName: res.data.full_name || ''
         });
       } catch (err) {
         console.error("Сессия истекла");
-        localStorage.clear();
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('refresh_token');
         setUser({ isLoggedIn: false, isTeacher: false, username: '' });
       }
     } else {
@@ -53,39 +77,44 @@ function App() {
   };
 
   useEffect(() => {
-    // Загрузка лекций
-    axios.get('http://127.0.0.1:8000/api/lectures/')
-      .then(res => setLectures(res.data))
-      .catch(err => console.error(err));
-
     refreshAuth();
   }, []);
 
   return (
     <Router>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Header user={user} onLogout={refreshAuth} />
+      <ToastProvider>
+        <ScrollToTop />
+        <Effects />
+        <div className="app-shell">
+          <div className="bg-orbs" aria-hidden="true"><span /><span /></div>
+          <Header user={user} onLogout={refreshAuth} />
 
-        <main style={{ flex: 1 }}>
-          <Routes>
-            <Route path="/" element={<Hub lectures={lectures} />} />
-            <Route path="/topic/:slug" element={<TopicPage />} />
-            <Route path="/login" element={<Login onLoginSuccess={refreshAuth} />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/create-test" element={<PrivateRoute><CreateTest /></PrivateRoute>} />
-            <Route path="/manage-tests" element={<PrivateRoute><ManageTests /></PrivateRoute>} />
-            <Route path="/edit-test/:id" element={<PrivateRoute><EditTest /></PrivateRoute>} />
+          <main className="app-main">
+            <Routes>
+              <Route path="/" element={<Hub user={user} />} />
+              <Route path="/topic/:slug" element={<TopicPage />} />
+              <Route path="/tests" element={<TestsPage user={user} />} />
+              <Route path="/login" element={<Login onLoginSuccess={refreshAuth} />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/my-results" element={<PrivateRoute><MyResults /></PrivateRoute>} />
+              <Route path="/create-test" element={<PrivateRoute><CreateTest /></PrivateRoute>} />
+              <Route path="/manage-tests" element={<PrivateRoute><ManageTests /></PrivateRoute>} />
+              <Route path="/edit-test/:id" element={<PrivateRoute><EditTest /></PrivateRoute>} />
 
-            <Route path="/quiz/:id" element={<PrivateRoute><QuizPage /></PrivateRoute>} />
-            <Route path="/teacher" element={<PrivateRoute><TeacherDashboard /></PrivateRoute>} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+              <Route path="/quiz/:id" element={<PrivateRoute><QuizPage /></PrivateRoute>} />
+              <Route path="/teacher" element={<PrivateRoute><TeacherDashboard /></PrivateRoute>} />
+              <Route path="/test-stats/:id" element={<PrivateRoute><TestStats /></PrivateRoute>} />
+              <Route path="/live" element={<PrivateRoute><LivePage /></PrivateRoute>} />
+              <Route path="/start" element={<PrivateRoute><StartQuiz /></PrivateRoute>} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </ToastProvider>
     </Router>
   );
 }

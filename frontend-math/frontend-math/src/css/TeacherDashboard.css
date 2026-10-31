@@ -1,228 +1,88 @@
-/* Контейнер всей страницы */
-.page-container {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #f9fafb;
-  min-height: 100vh;
+.dash__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.dash__meter { height: 6px; border-radius: 6px; background: var(--surface-2); margin-top: 14px; overflow: hidden; }
+.dash__meter span { display: block; height: 100%; background: var(--accent); border-radius: 6px; }
+
+.dash__filters {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+  padding: 8px;
+  border-radius: var(--r-m);
+  background: var(--surface);
 }
 
-.dashboard-title {
-  color: #1a3c34;
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  font-weight: 700;
-}
-
-/* Фильтры */
-.dashboard-filters {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.filter-input,
-.filter-select {
-  padding: 12px 16px;
-  font-size: 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  min-width: 220px;
-  background: white;
-}
-
-.filter-input:focus,
-.filter-select:focus {
-  outline: none;
-  border-color: #10b981;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-}
-
-/* Таблица */
-.results-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
-
-.results-table th,
-.results-table td {
-  padding: 16px 20px;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.results-table th {
-  background: #1a3c34;
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-.results-table tr {
-  transition: background 0.2s;
-}
-
-.clickable-row:hover {
-  background: #f1f5f9;
-  cursor: pointer;
-}
-
-.score-pass { color: #10b981; font-weight: 600; }
-.score-fail  { color: #ef4444; font-weight: 600; }
-
-.delete-btn {
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.2s;
-}
-
-.delete-btn:hover {
-  background: #dc2626;
-}
-
-/* Модальное окно */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
+.dash__search {
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background: white;
+  gap: 10px;
+  height: 54px;
+  padding: 0 18px;
   border-radius: 16px;
-  padding: 2.5rem;
-  max-width: 900px;
-  width: 92%;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-  position: relative;
+  background: var(--surface-2);
+  color: var(--muted);
+  transition: box-shadow 0.15s, background-color 0.15s;
 }
+.dash__search:focus-within { background: var(--surface); box-shadow: inset 0 0 0 2px var(--primary); }
+.dash__search input { flex: 1; border: 0; background: transparent; color: var(--ink); font: inherit; min-width: 0; }
+.dash__search input:focus { outline: none; }
 
-.modal-close-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 2.8rem;
-  cursor: pointer;
-  color: #6b7280;
-  transition: color 0.2s;
+.dash__student { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; }
+.dash__avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.94rem;
 }
+.dash__muted { color: var(--muted) !important; }
+.dash__empty { text-align: center; padding: 48px !important; color: var(--muted) !important; }
 
-.modal-close-btn:hover {
-  color: #1f2937;
+/* ---------- Модальное окно ---------- */
+.dash__modal-title { font-size: 2rem; font-weight: 800; padding-right: 56px; letter-spacing: -0.03em; }
+.dash__modal-link { display: inline-block; margin-top: 10px; font-weight: 600; }
+.dash__modal-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 24px 0;
 }
-
-.modal-title {
-  color: #1a3c34;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-
-.modal-info {
-  background: #f0fdfa;
-  padding: 1.2rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-}
-
-.modal-info p {
-  margin: 0.6rem 0;
-  font-size: 1.05rem;
-}
-
-.responses-list {
-  margin-top: 1.5rem;
-}
-
-.response-item {
-  padding: 1.5rem;
-  margin-bottom: 1.2rem;
-  border-radius: 10px;
-  border-left: 6px solid;
-  background: #f9fafb;
-}
-
-.response-item.correct {
-  border-left-color: #10b981;
-  background: #ecfdf5;
-}
-
-.response-item.incorrect {
-  border-left-color: #ef4444;
-  background: #fef2f2;
-}
-
-.question-text {
+.dash__modal-meta > span {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--surface-2);
   font-weight: 600;
-  margin-bottom: 1rem;
-  font-size: 1.15rem;
+  color: var(--ink);
 }
+.dash__modal-meta small { font-size: 0.875rem; font-weight: 400; color: var(--muted); }
 
-.answer-block p {
-  margin: 0.5rem 0;
+.dash__responses { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.dash__responses li { display: flex; gap: 14px; padding: 18px 20px; border-radius: 18px; background: var(--surface-2); }
+.dash__resp-icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 9px;
 }
+.is-correct .dash__resp-icon { background: var(--good-soft); color: var(--good); }
+.is-wrong .dash__resp-icon { background: var(--bad-soft); color: var(--bad); }
+.dash__resp-q { color: var(--ink); }
+.dash__resp-a { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: 8px; color: var(--muted); }
+.dash__resp-a strong { color: var(--ink); }
 
-.status {
-  font-weight: 600;
-  margin-top: 1rem;
-}
-
-.no-results {
-  text-align: center;
-  padding: 3rem;
-  color: #6b7280;
-  font-size: 1.2rem;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .dashboard-filters {
-    flex-direction: column;
-  }
-
-  .results-table {
-    font-size: 0.95rem;
-  }
-
-  .modal-content {
-    padding: 1.5rem;
-  }
-}
-
-/* Добавь в TeacherDashboard.css */
-.dashboard-select {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: #fff;
-    font-size: 0.9rem;
-    outline: none;
-    cursor: pointer;
-    min-width: 150px;
-}
-
-.dashboard-select:focus {
-    border-color: #40916c;
+@media (max-width: 860px) {
+  .dash__filters { grid-template-columns: 1fr 1fr; }
+  .dash__search { grid-column: 1 / -1; }
+  .dash__modal-meta { grid-template-columns: 1fr 1fr; }
 }

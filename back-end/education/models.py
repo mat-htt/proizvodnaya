@@ -26,6 +26,9 @@ class StudentProfile(models.Model):
 class Test(models.Model):
     title = models.CharField("Название теста", max_length=255)
     description = models.TextField("Описание темы", blank=True)
+    # Серия объединяет варианты одного теста (например, «Итоговое тестирование: производная»)
+    series = models.CharField("Серия (итоговое тестирование)", max_length=255, blank=True)
+    variant = models.PositiveSmallIntegerField("Номер варианта", null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -85,7 +88,7 @@ class StudentResponse(models.Model):
 class Lecture(models.Model):
     title = models.CharField("Название лекции", max_length=255)
     slug = models.SlugField("URL-имя (например, topic-1)", unique=True)
-    image_url = models.CharField("Путь к превью-картинке", max_length=500, default="/images/default.jpg")
+    image_url = models.CharField("Путь к превью-картинке", max_length=500, default="/images/covers/default.svg")
     content = models.TextField("Содержание лекции", blank=True, help_text="Здесь будет текст лекции, формулы и теги картинок")
     video_url = models.URLField("Ссылка на видео (YouTube)", max_length=500, blank=True, null=True)
 

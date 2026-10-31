@@ -1,0 +1,100 @@
+.live__controls {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+  padding: 24px;
+  border-radius: var(--r-l);
+  background: var(--surface);
+}
+.live__controls .field + .field { margin-top: 0; }
+.live__buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.live__buttons .btn { height: 54px; }
+.live__hint { margin: 12px 4px 12px; }
+
+/* ---------- Сцена для проектора ---------- */
+.live {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) 1.2fr;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--r-xl);
+  background: var(--dark);
+}
+.live:fullscreen { border-radius: 0; padding: 4vh 4vw; gap: 3vw; align-items: stretch; }
+
+.live__join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  border-radius: var(--r-l);
+  background: var(--accent-soft);
+  color: var(--ink);
+  text-align: center;
+}
+.live__qr { width: 100%; max-width: 340px; padding: 20px; border-radius: 24px; background: #fff; }
+.live:fullscreen .live__qr { max-width: 46vh; }
+.live__scan { margin-top: 24px; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; }
+.live__url { margin-top: 6px; font-size: 1.06rem; font-weight: 500; word-break: break-all; opacity: 0.8; }
+
+.live__board { padding: 32px; color: #fff; }
+.live__board-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.live__board h2 { color: #fff; font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; }
+.live__count { color: rgba(255, 255, 255, 0.7); font-size: 1.15rem; }
+
+.live__empty {
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+  border-radius: var(--r-l);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.25rem;
+}
+
+.live__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.live__row {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px 12px 12px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+}
+.live__place {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.live__row--top1 .live__place { background: #c6f135; color: #111411; }
+.live__row--top2 .live__place, .live__row--top3 .live__place { background: rgba(198, 241, 53, 0.25); color: #c6f135; }
+.live__row--top1 .live__score { color: #c6f135; }
+.live__name { display: flex; flex-direction: column; font-size: 1.3rem; font-weight: 700; line-height: 1.2; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.live__name small { font-size: 0.94rem; font-weight: 400; color: rgba(255, 255, 255, 0.6); }
+.live__score { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+
+.live:fullscreen .live__name { font-size: 2.6vh; }
+.live:fullscreen .live__score { font-size: 3.6vh; }
+
+@media (max-width: 960px) {
+  .live__controls { grid-template-columns: 1fr; }
+  .live { grid-template-columns: 1fr; }
+  .live__board { padding: 20px 12px; }
+}
+
+@media (max-width: 600px) {
+  .live__controls { padding: 16px; }
+  .live__buttons .btn { flex: 1 1 auto; }
+  .live__join { padding: 24px 18px; }
+  .live__row { grid-template-columns: 40px 1fr auto; gap: 10px; padding: 10px 14px 10px 10px; }
+  .live__place { height: 36px; font-size: 1.05rem; }
+  .live__name { font-size: 1.05rem; }
+  .live__score { font-size: 1.35rem; }
+}

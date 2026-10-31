@@ -1,99 +1,138 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
+import { renderMath } from '../utils/math';
+import { splitLectureTitle } from '../utils/format';
+import { ArrowLeft, ArrowRight } from '../components/Icons';
 import '../css/TopicPage.css';
+
+// youtube.com/watch?v=ID и youtu.be/ID → адрес для встраивания
+const toEmbedUrl = (url) => {
+  const match = url.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/);
+  return match ? `https://www.youtube.com/embed/${match[1]}` : url;
+};
 
 const TopicPage = () => {
   const { slug } = useParams();
   const [topic, setTopic] = useState(null);
+  const [lectures, setLectures] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [progress, setProgress] = useState(0);
+  const contentRef = useRef(null);
 
   useEffect(() => {
-    const fetchTopic = async () => {
-      try {
-        const res = await axios.get(`http://127.0.0.1:8000/api/lectures/${slug}/`);
-        setTopic(res.data);
-      } catch (err) {
+    setLoading(true);
+    setError(null);
+    Promise.all([api.get(`/lectures/${slug}/`), api.get('/lectures/')])
+      .then(([one, all]) => {
+        setTopic(one.data);
+        setLectures(all.data);
+      })
+      .catch(err => {
         console.error('Ошибка загрузки лекции:', err);
-        setError('Не удалось загрузить лекцию. Проверьте сервер.');
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchTopic();
+        setError(err.response?.status === 404 ? 'Лекция не найдена' : 'Не удалось загрузить лекцию. Проверьте, что сервер запущен.');
+      })
+      .finally(() => setLoading(false));
   }, [slug]);
 
-  // Рендерим KaTeX после загрузки контента
+  // HTML лекции вставляем сами, а не через dangerouslySetInnerHTML:
+  // так React не затрёт формулы, которые отрисовал KaTeX
   useEffect(() => {
-    if (topic) {
-      const timer = setTimeout(() => {
-        const contentElement = document.querySelector('.lecture-content');
-        if (contentElement && window.renderMathInElement) {
-          window.renderMathInElement(contentElement, {
-            delimiters: [
-              { left: "$$", right: "$$", display: true },
-              { left: "$", right: "$", display: false }
-            ]
-          });
-        }
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [topic]);
+    const el = contentRef.current;
+    if (!el || !topic) return;
+    el.innerHTML = topic.content || '';
+    renderMath(el);
+  }, [topic, loading]);
 
-  if (loading) return <div className="container" style={{ textAlign: 'center', padding: '50px' }}>Загрузка...</div>;
-  if (error) return <div className="container" style={{ textAlign: 'center', padding: '50px', color: 'red' }}>{error}</div>;
-  if (!topic) return <div className="container" style={{ textAlign: 'center', padding: '50px' }}>Тема не найдена</div>;
+  // Индикатор прочитанного
+  useEffect(() => {
+    const onScroll = () => {
+      const el = contentRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const total = rect.height - window.innerHeight * 0.6;
+      setProgress(Math.min(1, Math.max(0, -rect.top / Math.max(total, 1))));
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [topic, loading]);
+
+  if (loading) return <div className="state"><div className="spinner" />Загружаем лекцию…</div>;
+  if (error) return <div className="state"><h3>{error}</h3><Link to="/" className="btn">К программе курса</Link></div>;
+
+  const index = lectures.findIndex(l => l.slug === slug);
+  const prev = index > 0 ? lectures[index - 1] : null;
+  const next = index >= 0 && index < lectures.length - 1 ? lectures[index + 1] : null;
+  const { num, title } = splitLectureTitle(topic.title);
 
   return (
-    <div className="container" style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1>{topic.title}</h1>
+    <article className="lecture">
+      <div className="lecture__progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
 
-
-
-      {/* Видео-плеер */}
-      {topic.video_url && (
-        <div style={{ marginBottom: '20px' }}>
-          <iframe
-            width="100%"
-            height="450"
-            src={topic.video_url.replace("watch?v=", "embed/")}
-            title="Video"
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
+      <header className="lecture__head">
+        <div className="container container--narrow">
+          <nav className="crumbs" aria-label="Навигация">
+            <Link to="/">Курс</Link>
+            <span>/</span>
+            <span>Лекция {num || index + 1}</span>
+          </nav>
+          <h1 className="lecture__title">{title}</h1>
+          <div className="lecture__meta">
+            {index >= 0 && <span className="badge">Лекция {index + 1} из {lectures.length}</span>}
+            {topic.related_test && <span className="badge badge--brand">К лекции есть тест</span>}
+          </div>
         </div>
-      )}
+      </header>
 
-      {/* HTML-контент */}
-      <div
-        className="lecture-content"
-        dangerouslySetInnerHTML={{ __html: topic.content }}
-      />
+      <div className="container container--narrow">
+        {topic.video_url && (
+          <div className="lecture__video">
+            <iframe
+              src={toEmbedUrl(topic.video_url)}
+              title={`Видео: ${title}`}
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        )}
 
-      {/* Кнопка теста */}
-      {topic.related_test && (
-        <div style={{ textAlign: 'center', margin: '3.5rem 0' }}>
-          <Link
-            to={`/quiz/${topic.related_test}`}
-            style={{
-              background: '#10b981',
-              color: 'white',
-              padding: '14px 40px',
-              borderRadius: '50px',
-              textDecoration: 'none',
-              fontSize: '1.25rem',
-              fontWeight: 600,
-              display: 'inline-block',
-              boxShadow: '0 6px 20px rgba(16,185,129,0.3)'
-            }}
-          >
-            Пройти тест по теме →
-          </Link>
-        </div>
-      )}
-    </div>
+        <div ref={contentRef} className="lecture-content" />
+
+        {topic.related_test && (
+          <div className="lecture__test">
+            <div>
+              <h3>Проверьте себя</h3>
+              <p>Короткий тест по этой лекции, результат — сразу после отправки.</p>
+            </div>
+            <Link to={`/quiz/${topic.related_test}`} className="btn btn--primary btn--lg">
+              Пройти тест <ArrowRight size={18} />
+            </Link>
+          </div>
+        )}
+
+        <nav className="lecture__pager" aria-label="Соседние лекции">
+          {prev ? (
+            <Link to={`/topic/${prev.slug}`} className="pager-link">
+              <span><ArrowLeft size={16} /> Предыдущая</span>
+              <strong>{splitLectureTitle(prev.title).title}</strong>
+            </Link>
+          ) : <span />}
+          {next ? (
+            <Link to={`/topic/${next.slug}`} className="pager-link pager-link--next">
+              <span>Следующая <ArrowRight size={16} /></span>
+              <strong>{splitLectureTitle(next.title).title}</strong>
+            </Link>
+          ) : (
+            <Link to="/tests" className="pager-link pager-link--next">
+              <span>Финиш <ArrowRight size={16} /></span>
+              <strong>Итоговое тестирование</strong>
+            </Link>
+          )}
+        </nav>
+      </div>
+    </article>
   );
 };
 

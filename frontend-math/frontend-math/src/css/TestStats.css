@@ -1,0 +1,47 @@
+.stats__empty { margin-top: 12px; }
+
+.stats__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 48px 0 16px;
+}
+
+.stats__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+
+.stats__item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  padding: 28px;
+  border-radius: var(--r-l);
+  background: var(--surface);
+}
+
+.stats__rate { display: flex; flex-direction: column; }
+.stats__percent { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+.stats__percent--good { color: var(--good); }
+.stats__percent--mid { color: var(--mid); }
+.stats__percent--bad { color: var(--bad); }
+.stats__rate span { color: var(--muted); margin-top: 4px; }
+
+.stats__num { font-weight: 700; color: var(--accent-text); }
+.stats__text { color: var(--ink); margin-top: 6px; line-height: 1.6; }
+
+.stats__bar { height: 8px; border-radius: 8px; background: var(--surface-2); margin: 18px 0 14px; overflow: hidden; }
+.stats__fill { display: block; height: 100%; border-radius: 8px; }
+.stats__fill--good { background: var(--good); }
+.stats__fill--mid { background: #d9a82b; }
+.stats__fill--bad { background: var(--bad); }
+
+.stats__meta { display: flex; flex-wrap: wrap; gap: 6px 24px; color: var(--muted); font-size: 0.97rem; }
+.stats__meta b { color: var(--ink); }
+
+.stats__wrong { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; color: var(--muted); font-size: 0.97rem; }
+
+@media (max-width: 640px) {
+  .stats__item { grid-template-columns: 1fr; gap: 12px; padding: 22px 20px; }
+  .stats__rate { flex-direction: row; align-items: baseline; gap: 8px; }
+}
